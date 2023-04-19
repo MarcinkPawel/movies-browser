@@ -1,9 +1,11 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
+import { MainTile } from "./Tile/index.js";
+import { MovieContainer } from "./Container";
 import { Person } from "./features/personTail";
 import React from "react";
-import MovieTile from "./components/MovieTile";
+import MovieTileDetails from "./components/MovieTile";
 
 
 
@@ -11,8 +13,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Person />
-      <MovieTile />
+        <MovieContainer>
+          <MainTile />
+          <Person />
+          <MovieTileDetails />
+        </MovieContainer>
     </ThemeProvider>
   );
 }

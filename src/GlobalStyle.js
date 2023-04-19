@@ -13,8 +13,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        color: ${({ theme }) => theme.color.black};
         display: inherit;
         font-family: 'Inter', sans-serif;
-        background-color: white;
+        background: ${({ theme }) => theme.color.mercury};
+        font-family: 'Poppins', sans-serif;
     }
 `;
