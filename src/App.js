@@ -1,6 +1,8 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
+import React from "react";
+import MovieTile from "./components/MovieTile";
 
 
 
@@ -9,6 +11,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <p>Movies Browser</p>
+      <MovieTile />
     </ThemeProvider>
   );
 }
