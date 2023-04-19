@@ -2,7 +2,7 @@ import { Image, Content, Title, Year, Tile, Tags, Tag, Description, Details, Sta
 import poster from "../images/poster.png";
 import star from "../images/star.svg"
 
-export const MainTile = () => {
+export const MainTileDetails = () => {
     return (
             <Tile>
                 <Image
