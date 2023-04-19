@@ -4,6 +4,7 @@ export const theme = {
     silver: "#C4C4C4",
     waterloo: "#7E839A",
     woodsmoke: "#18181B",
+    heather: "#BAC7D580",
   },
   breakpoint: {
     mobile: 767,

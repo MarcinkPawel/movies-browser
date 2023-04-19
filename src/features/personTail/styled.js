@@ -8,7 +8,7 @@ export const PersonTail = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 16px;
-  box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+  box-shadow: 0px 4px 12px ${({ theme }) => theme.color.heather};
 `;
 
 export const PersonImage = styled.img`
