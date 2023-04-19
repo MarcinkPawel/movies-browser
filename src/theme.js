@@ -1,6 +1,7 @@
 export const theme = {
     color: {
-        white: "#ffffff",     
+        white: "#FFFFFF",
+        mercury: "#E5E5E5",     
     },
 
     breakpoint: {

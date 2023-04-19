@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { theme } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
     html {
@@ -15,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         display: inherit;
         font-family: 'Inter', sans-serif;
-        background-color: white;
+        background: ${({ theme }) => theme.color.mercury};
+;
     }
 `;
