@@ -57,3 +57,25 @@ export const Description = styled.p`
     margin: 24px 0 0 0;
     line-height: 1.6;
 `;
+
+export const Star = styled.img`
+    width: 24px;
+    margin-right: 8px;
+`;
+
+export const Rate = styled.div`
+    display: flex;
+`;
+
+export const RateNumber = styled.p`
+    font-size: 22px;
+    line-height: 1.3;
+    margin-right: 8px;
+    font-weight: 500;
+`;
+
+export const RateDetails = styled.p`
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 0px;
+`;

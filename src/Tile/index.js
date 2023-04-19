@@ -1,5 +1,6 @@
-import { Image, Content, Title, Year, Tile, Tags, Tag, Description, Details } from "./styled.js";
+import { Image, Content, Title, Year, Tile, Tags, Tag, Description, Details, Star, Rate, RateNumber, RateDetails } from "./styled.js";
 import poster from "../images/poster.png";
+import star from "../images/star.svg"
 
 export const MainTile = () => {
     return (
@@ -18,10 +19,18 @@ export const MainTile = () => {
                         <Tag>Adventure</Tag>
                         <Tag>Drama</Tag>
                     </Tags>
-                    <Description/>
+                    <Rate>
+                        <Star
+                            src={star}
+                            alt="ocena"
+                        />
+                        <RateNumber>7,8</RateNumber>
+                        <RateDetails> / 10 335 votes</RateDetails>
+                    </Rate>
+                    <Description>
                         A young Chinese maiden disguises herself as a male warrior in order to save her father. 
                         Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.
-                    <Description/>
+                    </Description>
                 </Content>
             </Tile>
 
