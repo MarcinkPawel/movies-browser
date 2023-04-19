@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { theme } from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
     html {
@@ -14,9 +13,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        color: ${({ theme }) => theme.color.black};
         display: inherit;
         font-family: 'Inter', sans-serif;
         background: ${({ theme }) => theme.color.mercury};
-;
+        font-family: 'Poppins', sans-serif;
     }
 `;
