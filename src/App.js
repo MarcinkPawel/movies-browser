@@ -5,19 +5,17 @@ import { MainTileDetails } from "./Tile/index.js";
 import { MovieContainer } from "./Container";
 import { Person } from "./features/personTail";
 import React from "react";
-import MovieTile from "./components/MovieTile";
-
-
+import MoviesList from "./features/MoviesList";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-        <MovieContainer>
-          <MovieTile />
-          <Person />
-          <MainTileDetails />
-        </MovieContainer>
+      <MovieContainer>
+        <MoviesList />
+        <Person />
+        <MainTileDetails />
+      </MovieContainer>
     </ThemeProvider>
   );
 }
