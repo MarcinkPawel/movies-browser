@@ -7,6 +7,8 @@ export const Tile = styled.article`
     display: flex;
     flex-direction: row;
     row-gap: 40px;
+    max-width: 1368px;
+    margin: 24px auto 40px;
 `;
 
 export const Image = styled.img`
