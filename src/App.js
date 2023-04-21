@@ -7,17 +7,20 @@ import { Person } from "./features/personTail";
 import React from "react";
 import MovieTile from "./components/MovieTile";
 import { HashRouter } from "react-router-dom";
+import { Nav } from "./styled";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <HashRouter>
-        <GlobalStyle />
-          <MovieContainer>
-            <MovieTile />
-            <Person />
-            <MainTileDetails />
-          </MovieContainer>
+        <Nav>
+          <GlobalStyle />
+            <MovieContainer>
+              <MovieTile />
+              <Person />
+              <MainTileDetails />
+            </MovieContainer>
+        </Nav>
       </HashRouter>
     </ThemeProvider>
   );
