@@ -12,7 +12,9 @@ export const theme = {
         heather: "#BAC7D580",
       },
       breakpoint: {
+        mobileMin: 576,
         mobileMax: 767,
+        tablet: 992,
       },
       fontWeight: {
         light: 300,
