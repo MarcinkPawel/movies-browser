@@ -4,7 +4,10 @@ import { theme } from "./theme";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { toMovie, toPerson, toPopularMovies, toPopularPeople } from "./routes";
 import { Nav } from "./components/Nav/styled";
-
+import MovieTile from "./components/MovieTile";
+import { Person } from "./components/personTaile";
+import Movies from "./components/MoviesList";
+import People from "./component/PopularPeople";
 
 
 export default () => (
@@ -14,16 +17,16 @@ export default () => (
           <Nav />
           <Switch>
             <Route path={toMovie}>
-              {/* Movie */}
+              <MovieTile />
             </Route>
             <Route path={toPerson}>
-              {/* Person */}
+              <Person />
             </Route>
             <Route path={toPopularMovies}>
-              {/* Popoular movies */}
+              <Movies />
             </Route>
             <Route path={toPopularPeople}>
-              {/* Popular people */}
+              <People />
             </Route>
             <Route>
               <Redirect to={toPopularMovies} />
