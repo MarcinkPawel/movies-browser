@@ -13,7 +13,9 @@ export const theme = {
         cornflowerblue: "#6195ED",
       },
       breakpoint: {
-        mobile: 767,
+        mobileMin: 576,
+        mobileMax: 767,
+        tablet: 992,
       },
       fontWeight: {
         light: 300,

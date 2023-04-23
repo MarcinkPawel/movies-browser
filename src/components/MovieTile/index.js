@@ -5,10 +5,8 @@ const MovieTile = () => {
   return (
     <Tile>
       <Poster src={moviePoster} />
-      <div>
-        <Title>TITLE</Title>
-        <Year>YEAR</Year>
-      </div>
+      <Title>TITLE</Title>
+      <Year>YEAR</Year>
     </Tile>
   );
 };
