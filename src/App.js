@@ -1,41 +1,38 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
-//import { MainTileDetails } from "./Tile/index.js";
-//import { Person } from "./features/personTail";
-//import MovieTile from "./components/MovieTile";
-import { HashRouter } from "react-router-dom";
-import { Nav, Title, Video, List, Li, Search, Magnifier, InputStyled } from "./styled";
-import video from "./images/video.svg";
-import magnifier from "./images/search.svg";
-//import { Error } from "./Error";
-import { Loader } from "./Loader"
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import { toMovie, toPerson, toPopularMovies, toPopularPeople } from "./routes";
+import { Nav } from "./components/Nav/styled";
+import MovieTile from "./components/MovieTile";
+import { Person } from "./components/personTaile";
+import Movies from "./components/MoviesList";
+import People from "./component/PopularPeople";
 
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle /> 
-      <HashRouter>
-        <Nav>
-          <Title>
-            <Video src={video}/>
-            Movies Browser
-          </Title>
-          <List>
-            <Li>MOVIES</Li>
-            <Li>PEOPLE</Li>
-          </List>
-          <Search>
-            <Magnifier src={magnifier}/>
-            <InputStyled
-              placeholder={`Search for movies..`}
-            />
-          </Search>
-        </Nav>
-      </HashRouter>
-      <Loader/>
+
+export default () => (
+      <ThemeProvider theme={theme}>
+      <GlobalStyle />
+        <HashRouter>
+          <Nav />
+          <Switch>
+            <Route path={toMovie}>
+              <MovieTile />
+            </Route>
+            <Route path={toPerson}>
+              <Person />
+            </Route>
+            <Route path={toPopularMovies}>
+              <Movies />
+            </Route>
+            <Route path={toPopularPeople}>
+              <People />
+            </Route>
+            <Route>
+              <Redirect to={toPopularMovies} />
+            </Route>
+          </Switch>
+        </HashRouter>
     </ThemeProvider>
-  );
-}
+)
 
-export default App;
