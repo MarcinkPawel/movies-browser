@@ -1,5 +1,5 @@
 import { Poster, Tile, Title, Year } from "./styled";
-import moviePoster from "./images/poster.png";
+import moviePoster from "../../images/poster.png";
 
 const MovieTile = () => {
   return (
