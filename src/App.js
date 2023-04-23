@@ -3,6 +3,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
 import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
 import { toMovie, toPerson, toPopularMovies, toPopularPeople } from "./routes";
+import { Nav } from "./components/Nav/styled";
 
 
 
