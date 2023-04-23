@@ -3,7 +3,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
 import { MainTileDetails } from "./Tile/index.js";
 import { MovieContainer } from "./Container";
-import { Person } from "./features/personTail";
+import { Person } from "./components/personTail";
 import React from "react";
 import MovieTile from "./components/MovieTile";
 
