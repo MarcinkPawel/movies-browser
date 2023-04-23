@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Nav = styled.nav`
     background: ${({ theme }) => theme.color.black};
     color: ${({ theme }) => theme.color.white};
-    height: 94px;
+    min-height: 94px;
     width: 100%;
     margin: 0%, auto;
     display: flex;
@@ -11,6 +11,10 @@ export const Nav = styled.nav`
     flex-wrap: wrap;
     flex-basis: auto;
     justify-content: space-around;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+    width: 100%;
+    }
 `;
 
 export const Title = styled.p`
@@ -56,6 +60,10 @@ export const Search = styled.div`
     border-radius: 33px;
     border-color: 1px, solid, ${({ theme }) => theme.color.mystic};
     margin: 23px, 292px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
+        margin-bottom: 23px;
+    }
 `;
 
 export const Magnifier = styled.img`

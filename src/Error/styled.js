@@ -26,5 +26,20 @@ export const Info = styled.h2`
 `;
 
 export const Button = styled.button`
+    padding: 16px 24px;
+    width: 181px;
+    height: 51px;
+    color: ${({ theme }) => theme.color.white};
+    background: ${({ theme }) => theme.color.cornflowerblue};
+    border-radius: 5px;
+    margin-top: 24px;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
 
+    &:hover {
+        scale: 1.1;
+        filter: brightness(150%);
+    }
 `;
