@@ -10,6 +10,7 @@ export const theme = {
         waterloo: "#7E839A",
         woodsmoke: "#18181B",
         heather: "#BAC7D580",
+        cornflowerblue: "#6195ED",
       },
       breakpoint: {
         mobile: 767,
