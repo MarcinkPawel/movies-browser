@@ -1,7 +1,7 @@
-import { Person } from "../personTail";
+import { Person } from "../PersonTile";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 
-const Movies = () => {
+export const People = () => {
   return (
     <Wrapper>
       <Header>Popular people</Header>
@@ -24,5 +24,3 @@ const Movies = () => {
     </Wrapper>
   );
 };
-
-export default Movies;

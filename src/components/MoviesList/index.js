@@ -1,7 +1,7 @@
-import MovieTile from "../../components/MovieTile";
+import { MovieTile } from "../MovieTile";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 
-const Movies = () => {
+export const Movies = () => {
   return (
     <Wrapper>
       <Header>Popular movies</Header>
@@ -19,5 +19,3 @@ const Movies = () => {
     </Wrapper>
   );
 };
-
-export default Movies;

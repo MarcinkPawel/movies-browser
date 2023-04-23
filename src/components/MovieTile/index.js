@@ -1,7 +1,7 @@
 import { Poster, Tile, Title, Year } from "./styled";
 import moviePoster from "../../images/poster.png";
 
-const MovieTile = () => {
+export const MovieTile = () => {
   return (
     <Tile>
       <Poster src={moviePoster} />
@@ -11,4 +11,3 @@ const MovieTile = () => {
   );
 };
 
-export default MovieTile;

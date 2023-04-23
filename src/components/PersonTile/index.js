@@ -1,11 +1,11 @@
-import { PersonTail, PersonImage, FullName, FunctionName } from "./styled";
+import { PersonTile, PersonImage, FullName, FunctionName } from "./styled";
 
 export const Person = () => {
   return (
-    <PersonTail>
+    <PersonTile>
       <PersonImage></PersonImage>
       <FullName>Paweł</FullName>
       <FunctionName>Actor</FunctionName>
-    </PersonTail>
+    </PersonTile>
   );
 };

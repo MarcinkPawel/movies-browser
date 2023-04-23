@@ -1,5 +1,5 @@
 import { Icon, Info, Wrapper } from "./styled";
-import iconspinner from "./IconSpinner.svg"
+import iconspinner from "../../images/IconSpinner.svg"
 
 
 export const Loader = () => {
