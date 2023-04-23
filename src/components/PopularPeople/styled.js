@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   background: ${({ theme }) => theme.color.mercury};
   margin: 40px auto 0;
   padding: 16px;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     max-width: 320px;
     width: 100%;
@@ -18,6 +19,7 @@ export const Header = styled.h1`
   color: ${({ theme }) => theme.color.black};
   line-height: 1.2;
   margin-bottom: 24px;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 18px;
     margin-bottom: 12px;
