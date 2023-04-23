@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const PersonTail = styled.div`
+export const PersonTile = styled.div`
   width: 208px;
   height: 339px;
   background-color: ${({ theme }) => theme.color.white};
