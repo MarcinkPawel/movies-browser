@@ -1,25 +1,34 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
-import { MainTileDetails } from "./Tile/index.js";
-import { MovieContainer } from "./Container";
-import { Person } from "./features/personTail";
-import React from "react";
-import MovieTile from "./components/MovieTile";
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import { toMovie, toPerson, toPopularMovies, toPopularPeople } from "./routes";
 
 
 
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
+export default () => (
+      <ThemeProvider theme={theme}>
       <GlobalStyle />
-        <MovieContainer>
-          <MovieTile />
-          <Person />
-          <MainTileDetails />
-        </MovieContainer>
+        <HashRouter>
+          <Nav />
+          <Switch>
+            <Route path={toMovie}>
+              {/* Movie */}
+            </Route>
+            <Route path={toPerson}>
+              {/* Person */}
+            </Route>
+            <Route path={toPopularMovies}>
+              {/* Popoular movies */}
+            </Route>
+            <Route path={toPopularPeople}>
+              {/* Popular people */}
+            </Route>
+            <Route>
+              <Redirect to={toPopularMovies} />
+            </Route>
+          </Switch>
+        </HashRouter>
     </ThemeProvider>
-  );
-}
+)
 
-export default App;
