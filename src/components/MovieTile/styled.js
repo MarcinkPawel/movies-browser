@@ -6,8 +6,7 @@ export const Tile = styled.article`
   height: 650px;
   padding: 16px;
   border-radius: 5px;
-  box-shadow: 0px 4px 12px 0px #BAC7D580;
-
+  box-shadow: 0px 4px 12px 0px #bac7d580;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
@@ -15,7 +14,6 @@ export const Tile = styled.article`
     grid-gap: 16px;
     width: 100%;
     height: auto;
-    box-shadow: 0px 4px 12px 0px #bac7d580;
   }
 `;
 
@@ -49,6 +47,7 @@ export const Year = styled.p`
   font-weight: 400;
   color: ${({ theme }) => theme.color.waterloo};
   margin: 8px 0;
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 13px;
   }

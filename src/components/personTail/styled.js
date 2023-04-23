@@ -9,6 +9,10 @@ export const PersonTail = styled.div`
   align-items: center;
   padding: 16px;
   box-shadow: 0px 4px 12px ${({ theme }) => theme.color.heather};
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 136px;
+    height: 245px;
+  }
 `;
 
 export const PersonImage = styled.img`
@@ -16,6 +20,10 @@ export const PersonImage = styled.img`
   height: 231px;
   background-color: ${({ theme }) => theme.color.silver};
   border-radius: 5px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 120px;
+    height: 178px;
+  }
 `;
 
 export const FullName = styled.span`
@@ -26,6 +34,11 @@ export const FullName = styled.span`
   text-align: center;
   padding: 12px 0 8px 0;
   color: ${({ theme }) => theme.color.woodsmoke};
+  overflow-wrap: break-word;
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 `;
 
 export const FunctionName = styled.span`
@@ -35,4 +48,8 @@ export const FunctionName = styled.span`
   line-height: 27px;
   text-align: center;
   color: ${({ theme }) => theme.color.waterloo};
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    font-size: 14px;
+    line-height: 18px;
+  }
 `;
