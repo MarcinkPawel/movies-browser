@@ -1,7 +1,7 @@
 
 import styled from "styled-components";
 
-export const Nav = styled.nav`
+export const Wrapper = styled.nav`
     background: ${({ theme }) => theme.color.black};
     color: ${({ theme }) => theme.color.white};
     min-height: 94px;
