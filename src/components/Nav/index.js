@@ -1,5 +1,5 @@
 import {
-  Nav,
+  Wrapper,
   Title,
   Video,
   List,
@@ -8,11 +8,11 @@ import {
   Magnifier,
   InputStyled,
 } from "./styled";
-import video from "./images/video.svg";
-import magnifier from "./images/search.svg";
+import video from "../../images/Video.svg";
+import magnifier from "../../images/search.svg";
 
 export const Nav = () => (
-  <Nav>
+  <Wrapper>
     <Title>
       <Video src={video} />
       Movies Browser
@@ -25,5 +25,5 @@ export const Nav = () => (
       <Magnifier src={magnifier} />
       <InputStyled placeholder={`Search for movies..`} />
     </Search>
-  </Nav>
+  </Wrapper>
 );

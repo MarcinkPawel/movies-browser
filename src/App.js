@@ -2,7 +2,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import { Nav } from "./components/Nav/styled";
+import { Nav } from "./components/Nav";
 import { MovieTile } from "./components/MovieTile";
 import { Person } from "./components/PersonTile";
 import { Movies } from "./components/MoviesList";
