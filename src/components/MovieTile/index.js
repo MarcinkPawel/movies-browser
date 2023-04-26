@@ -1,13 +1,37 @@
-import { Poster, Tile, Title, Year } from "./styled";
+import {
+  Poster,
+  Tile,
+  Title,
+  Year,
+  Details,
+  MovieType,
+  MovieGenre,
+  Rating,
+  Star,
+  Rate,
+  Votes,
+} from "./styled";
 import moviePoster from "../../images/poster.png";
+import star from "../../images/star.svg";
 
 export const MovieTile = () => {
   return (
     <Tile>
       <Poster src={moviePoster} />
-      <Title>TITLE</Title>
-      <Year>YEAR</Year>
+      <Details>
+        <Title>TITLE</Title>
+        <Year>YEAR</Year>
+        <MovieGenre>
+          <MovieType>Action</MovieType>
+          <MovieType>Adventure</MovieType>
+          <MovieType>Action</MovieType>
+        </MovieGenre>
+        <Rating>
+          <Star src={star} />
+          <Rate>4,4</Rate>
+          <Votes>23 votes</Votes>
+        </Rating>
+      </Details>
     </Tile>
   );
 };
-
