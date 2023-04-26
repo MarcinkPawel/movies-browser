@@ -1,11 +1,11 @@
 import { Person } from "../PersonTile";
-import { Header, MoviesContainer, Wrapper } from "./styled";
+import { Header, PeopleContainer, Wrapper } from "./styled";
 
 export const People = () => {
   return (
     <Wrapper>
       <Header>Popular people</Header>
-      <MoviesContainer>
+      <PeopleContainer>
         <Person />
         <Person />
         <Person />
@@ -20,7 +20,7 @@ export const People = () => {
         <Person />
         <Person />
         <Person />
-      </MoviesContainer>
+      </PeopleContainer>
     </Wrapper>
   );
 };
