@@ -10,8 +10,7 @@ export const Tile = styled.article`
   &:hover {
     cursor: pointer;
     transform: scale(1.05, 1.05);
-    transition: 1s;
-    transition-timing-function: linear;
+    transition:  1s ease-out 0s;
   }
 
 
