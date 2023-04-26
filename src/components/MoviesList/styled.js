@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 1368px;
   background: ${({ theme }) => theme.color.mercury};
   margin: 40px auto 0;
@@ -14,7 +17,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.h1`
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   font-size: 36px;
   color: ${({ theme }) => theme.color.woodsmoke};
   line-height: 1.2;
@@ -30,4 +33,12 @@ export const MoviesContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
   grid-template-rows: 1fr;
   gap: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
 `;

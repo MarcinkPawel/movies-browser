@@ -7,6 +7,14 @@ export const Tile = styled.article`
   border-radius: 5px;
   box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.heather};
 
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05, 1.05);
+    transition: 1s;
+    transition-timing-function: linear;
+  }
+
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
     grid-template-columns: auto 1fr;
