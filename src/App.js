@@ -1,12 +1,13 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
-import { HashRouter, Routes, Route } from "react-router-dom";
 import { Nav } from "./components/Nav";
 import { MovieTile } from "./components/MovieTile";
 import { Person } from "./components/PersonTile";
 import { Movies } from "./components/MoviesList";
 import { People } from "./components/PopularPeople";
+import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
+import { toMovie, toMovies, toPeople, toPerson } from "./routes";
 
 
 export default () => (
@@ -14,13 +15,23 @@ export default () => (
       <GlobalStyle />
         <HashRouter>
           <Nav />
-          <Routes>
-            <Route path="/movie" element={<MovieTile />} />
-            <Route path="/person" element={<Person />} />
-            <Route path="/popular-movies" element={<Movies />} />
-            <Route path="/popular-people" element={<People />} />
-            <Route path="/" element={<Movies />} />
-          </Routes>
+          <Switch>
+            <Route path={toMovie()}>
+              <MovieTile/>
+            </Route>
+            <Route path={toMovies()}>
+              <Movies/>
+            </Route>
+            <Route path={toPerson()}>
+              <Person />
+            </Route>
+            <Route path={toPeople()}>
+              <People />
+            </Route>
+            <Route>
+              <Redirect to={toMovies()} />
+            </Route>
+          </Switch>
         </HashRouter>
     </ThemeProvider>
 )
