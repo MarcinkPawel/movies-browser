@@ -6,11 +6,8 @@ import {
   Details,
   MovieType,
   MovieGenre,
-  Rating,
-  Star,
-  Rate,
-  Votes,
 } from "./styled";
+import { Rating, Star, Rate, Votes } from "../Rating";
 import moviePoster from "../../images/poster.png";
 import star from "../../images/star.svg";
 

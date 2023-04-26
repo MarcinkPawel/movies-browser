@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 
 export const Header = styled.h1`
   align-self: flex-start;
-  font-weight: 600;
+  font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   font-size: 36px;
   color: ${({ theme }) => theme.color.black};
   line-height: 1.2;
