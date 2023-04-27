@@ -1,5 +1,24 @@
-
 import styled from "styled-components";
+import { Link, NavLink } from "react-router-dom"
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+`;
+
+export const StyledNavLink = styled(NavLink)`
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    padding: 8px 12px;
+    color: ${({ theme }) => theme.color.white};
+
+    &.active {
+        border: 1px solid ${({ theme }) => theme.color.white};
+        border-radius: 29px;
+
+    }
+`;
 
 export const Wrapper = styled.nav`
     background: ${({ theme }) => theme.color.black};
@@ -13,8 +32,10 @@ export const Wrapper = styled.nav`
     flex-basis: auto;
     justify-content: space-around;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-    width: 100%;
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        width: 100%;
+        padding: 32px 16px 16px 16px;
+        flex-direction: column;
     }
 `;
 
@@ -27,6 +48,7 @@ export const Title = styled.p`
     text-transform: capitalize;
     display: flex;
     align-items: flex-start;
+    color: ${({ theme }) => theme.color.white};
 `;
 
 export const Video = styled.img`
@@ -42,14 +64,12 @@ export const List = styled.ul`
     flex-direction: row;
     list-style: none;
     gap: 16px;
-`;
 
-export const Li = styled.li`
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 21px;
-    padding: 13px 24px;
-    text-decoration: none;
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        padding: 8px 12px;
+        align-items: center;
+        display: flex;
+    }
 `;
 
 export const Search = styled.div`
@@ -62,8 +82,12 @@ export const Search = styled.div`
     border-color: 1px, solid, ${({ theme }) => theme.color.mystic};
     margin: 23px, 292px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}px) {
-        margin-bottom: 23px;
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        width: 100%;
+        margin: auto;
+        font-size: 13px;
+        line-height: 16.9px;
+
     }
 `;
 
@@ -88,3 +112,4 @@ export const InputStyled = styled.input`
         color: ${({ theme }) => theme.color.waterloo};
     }
 `;
+
