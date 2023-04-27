@@ -31,3 +31,11 @@ export const MoviesContainer = styled.div`
   grid-template-rows: 1fr;
   gap: 24px;
 `;
+
+export const Item = styled.section`
+margin: 0;
+
+@media (max-width: ${({theme})=>theme.breakpoints.mobileMax}px) {
+        width: 100%;
+    }
+`;
