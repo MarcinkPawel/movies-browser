@@ -10,9 +10,8 @@ export const Tile = styled.article`
   &:hover {
     cursor: pointer;
     transform: scale(1.05, 1.05);
-    transition:  1s ease-out 0s;
+    transition: 1s ease-out 0s;
   }
-
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
@@ -64,33 +63,3 @@ export const Details = styled.div`
   margin: 0;
   padding: 0;
 `;
-
-export const MovieGenre = styled.div`
-  width: 292;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 8px;
-  flex-flow: wrap;
-`;
-
-export const MovieType = styled.span`
-  background-color: ${({ theme }) => theme.color.mystic};
-  border-radius: 5px;
-  padding: 8px 16px;
-  font-size: 14px;
-  line-height: 20px;
-  color: ${({ theme }) => theme.color.black};
-  font-weight: ${({ theme }) => theme.fontWeight.regular};
-  text-align: center;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    font-size: 10px;
-    line-height: 11px;
-    padding: 4px 8px;
-  }
-`;
-
-

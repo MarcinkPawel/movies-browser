@@ -1,13 +1,6 @@
-import {
-  Poster,
-  Tile,
-  Title,
-  Year,
-  Details,
-  MovieType,
-  MovieGenre,
-} from "./styled";
+import { Poster, Tile, Title, Year, Details } from "./styled";
 import { Rating, Star, Rate, Votes } from "../Rating";
+import { MovieGenre, MovieType } from "../MovieGenre";
 import moviePoster from "../../images/poster.png";
 import star from "../../images/star.svg";
 
