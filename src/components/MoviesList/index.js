@@ -1,20 +1,16 @@
 import { MovieTile } from "../MovieTile";
-import { Header, MoviesContainer, Wrapper } from "./styled";
+import { Header, Item, MoviesContainer, Wrapper } from "./styled";
 
-export const Movies = () => {
+export const Movies = ({ movies }) => {
   return (
     <Wrapper>
       <Header>Popular movies</Header>
       <MoviesContainer>
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-      <MovieTile />
-
+        {movies?.map((movie) => 
+          <Item key={movie.id}>
+            <MovieTile movie={movie} />
+          </Item>
+        )}
       </MoviesContainer>
     </Wrapper>
   );
