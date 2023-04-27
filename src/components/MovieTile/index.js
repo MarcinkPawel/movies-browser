@@ -1,13 +1,19 @@
-import { Poster, Tile, Title, Year } from "./styled";
-import moviePoster from "../../images/poster.png";
+import { Poster, Tile, Title, Wrapper, Year } from "./styled";
 
-export const MovieTile = () => {
+export const MovieTile = ({ movie }) => {
   return (
     <Tile>
-      <Poster src={moviePoster} />
-      <Title>TITLE</Title>
-      <Year>YEAR</Year>
+      <Wrapper>
+        {movie.poster_path ? (
+      <Poster src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+              alt={movie.title}
+      />
+      ) : (
+        "ooo"
+      )}
+      </Wrapper>
+      <Title>{movie.title}</Title>
+      <Year>{movie.release_date.slice(0, 4)}</Year>
     </Tile>
   );
 };
-

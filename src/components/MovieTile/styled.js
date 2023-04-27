@@ -17,6 +17,14 @@ export const Tile = styled.article`
   }
 `;
 
+export const Wrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 5px;
+    flex-basis: auto; 
+`;
+
 export const Poster = styled.img`
   height: 434px;
   width: 292px;
