@@ -3,23 +3,30 @@ import {
   Title,
   Video,
   List,
-  Li,
   Search,
   Magnifier,
   InputStyled,
+  StyledLink,
+  StyledNavLink
 } from "./styled";
 import video from "../../images/Video.svg";
 import magnifier from "../../images/search.svg";
 
 export const Nav = () => (
   <Wrapper>
-    <Title>
-      <Video src={video} />
-      Movies Browser
-    </Title>
+    <StyledLink to={"/movies"}>
+      <Title>
+        <Video src={video} />
+        Movies Browser
+      </Title>
+    </StyledLink>
     <List>
-      <Li>MOVIES</Li>
-      <Li>PEOPLE</Li>
+      <li>
+        <StyledNavLink to={"/movies"}>Movies</StyledNavLink>
+      </li>
+      <li>
+        <StyledNavLink to={"/people"}>People</StyledNavLink>
+      </li>
     </List>
     <Search>
       <Magnifier src={magnifier} />
