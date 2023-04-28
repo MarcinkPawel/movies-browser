@@ -1,4 +1,4 @@
-import { Person } from "../PersonTile";
+import { Person } from "../personPage";
 import { Header, PeopleContainer, Wrapper } from "./styled";
 
 export const People = () => {

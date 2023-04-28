@@ -1,5 +1,5 @@
 import { Wrapper } from "./styled";
-import { AboutMovie } from "./AboutMovie";
+import { AboutMovie } from "../../../components/Movie/AboutMovie";
 import { BackgroundPoster } from "./BackgroundPoster";
 
 export const Movie = () => (
