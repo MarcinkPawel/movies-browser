@@ -1,11 +1,11 @@
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
-import { Nav } from "./components/Nav";
-import { MovieTile } from "./components/MovieTile";
-import { Person } from "./components/PersonTile";
-import { Movies } from "./components/MoviesList";
-import { People } from "./components/PopularPeople";
+import { Nav } from "./common/Nav";
+import { MovieTile } from "./features/movies/moviePage";
+import { Person } from "./features/people/personPage";
+import { Movies } from "./features/movies/moviePage/MoviesList";
+import { People } from "./features/people/peoplePage";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { toMovie, toMovies, toPeople, toPerson } from "./routes";
 

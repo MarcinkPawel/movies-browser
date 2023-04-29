@@ -1,4 +1,4 @@
-import { MovieTile } from "../MovieTile";
+import { MovieTile } from "..";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 
 export const Movies = () => {
