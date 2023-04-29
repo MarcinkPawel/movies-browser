@@ -7,6 +7,7 @@ export const Rating = styled.div`
   align-items: center;
   gap: 12px;
   padding: 16px 0 0 0;
+  max-width: 250px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     gap: 8px;
