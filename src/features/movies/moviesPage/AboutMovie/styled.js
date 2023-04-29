@@ -10,12 +10,12 @@ grid-row-gap: 0px;
   padding: 40px;
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   max-width: 1368px;
-  margin: 24px auto 40px;
+  margin: 24px 0 40px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin: 16px;
     padding: 16px;
-    width: 288px;
+    max-width: 288px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);

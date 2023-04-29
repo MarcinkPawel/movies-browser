@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Image,
   Content,
@@ -9,10 +10,10 @@ import {
   Label,
   Info,
 } from "./styled";
-import { Rating, Star, Rate, Votes } from "../../Rating";
+import { Rating, Star, Rate, Votes } from "../../../../common/Rating";
 import { MovieGenre, MovieType } from "../../MovieGenre";
-import poster from "../../../images/poster.png";
-import star from "../../../images/star.svg";
+import poster from "../../../../images/poster.png";
+import star from "../../../../images/star.svg";
 
 export const AboutMovie = ({ aboutMovie }) => {
   return (

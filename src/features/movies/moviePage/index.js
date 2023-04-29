@@ -1,6 +1,7 @@
+import React from "react";
 import { Poster, Tile, Title, Year, Details } from "./styled";
 import { Rating, Star, Rate, Votes } from "../../../common/Rating";
-import { MovieGenre, MovieType } from "../../../components/MovieGenre";
+import { MovieGenre, MovieType } from "../MovieGenre";
 import moviePoster from "../../../images/poster.png";
 import star from "../../../images/star.svg";
 

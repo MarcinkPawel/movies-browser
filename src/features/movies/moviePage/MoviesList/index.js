@@ -1,3 +1,4 @@
+import React from "react";
 import { MovieTile } from "..";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 
