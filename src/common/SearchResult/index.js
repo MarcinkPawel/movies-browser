@@ -1,7 +1,7 @@
 import { Container, SearchInfo, ResultList } from "./styled";
 import MovieTile from "../MovieTile";
 
-export const SearchReasult = () => {
+export const SearchResult = () => {
   return (
     <Container>
       <SearchInfo>Search results for ""</SearchInfo>
