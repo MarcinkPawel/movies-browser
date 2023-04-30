@@ -1,4 +1,9 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+export const TileLink = styled(Link)`
+  text-decoration: none;
+`;
 
 export const Tile = styled.article`
   background: ${({ theme }) => theme.color.white};
