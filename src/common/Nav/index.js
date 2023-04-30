@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Wrapper,
   Title,
@@ -7,13 +8,15 @@ import {
   Magnifier,
   InputStyled,
   StyledLink,
-  StyledNavLink
+  StyledNavLink,
+  Section,
 } from "./styled";
 import video from "../../images/Video.svg";
 import magnifier from "../../images/search.svg";
 
 export const Nav = () => (
   <Wrapper>
+    <Section>
     <StyledLink to={"/movies"}>
       <Title>
         <Video src={video} />
@@ -22,12 +25,13 @@ export const Nav = () => (
     </StyledLink>
     <List>
       <li>
-        <StyledNavLink to={"/movies"}>Movies</StyledNavLink>
+        <StyledNavLink to={"/movies"}>MOVIES</StyledNavLink>
       </li>
       <li>
-        <StyledNavLink to={"/people"}>People</StyledNavLink>
+        <StyledNavLink to={"/people"}>PEOPLE</StyledNavLink>
       </li>
     </List>
+    </Section>
     <Search>
       <Magnifier src={magnifier} />
       <InputStyled placeholder={`Search for movies..`} />

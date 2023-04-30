@@ -1,3 +1,4 @@
+import React from "react";
 import { Person } from "../personPage";
 import { Header, PeopleContainer, Wrapper } from "./styled";
 

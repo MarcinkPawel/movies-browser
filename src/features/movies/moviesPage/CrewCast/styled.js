@@ -3,10 +3,9 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   max-width: 1368px;
   background: ${({ theme }) => theme.color.mercury};
-  margin: 40px auto 0;
+  margin: 64px auto 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     max-width: 320px;
@@ -16,7 +15,7 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Header = styled.h1`
+export const Title = styled.h1`
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   font-size: 36px;
   color: ${({ theme }) => theme.color.black};
@@ -28,7 +27,8 @@ export const Header = styled.h1`
     margin-bottom: 12px;
   }
 `;
-export const PeopleContainer = styled.div`
+
+export const List = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
   grid-template-rows: 1fr;

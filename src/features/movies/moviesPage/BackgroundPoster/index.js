@@ -1,7 +1,8 @@
-import { Rating, Star, Rate, Votes } from "../../Rating";
+import React from "react";
+import { Rating, Star, Rate, Votes } from "../../../../common/Rating";
 import { Wrapper, PosterSpace, Poster, Section, Title } from "./styled";
-import star from "../../../images/star.svg";
-import posterBig from "../../../images/posterBig.png";
+import star from "../../../../images/star.svg";
+import posterBig from "../../../../images/posterBig.png";
 
 export const BackgroundPoster = () => (
   <Wrapper>

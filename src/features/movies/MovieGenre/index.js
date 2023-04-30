@@ -7,11 +7,11 @@ export const MovieGenre = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: ${ aboutMovie  => aboutMovie ? '16px' : '8px'};
+  gap: ${(aboutMovie) => (aboutMovie ? "16px" : "8px")};
   flex-flow: wrap;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-   gap: 8px;
+    gap: 8px;
   }
 `;
 

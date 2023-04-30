@@ -50,7 +50,7 @@ export const PosterSpace = styled.div`
 `;
 
 export const Poster = styled.img`
-  max-width: 1368px;
+  max-width: 100%;
   max-height: 769px;
   position: relative;
   z-index: -1;
@@ -58,7 +58,6 @@ export const Poster = styled.img`
 
 export const Section = styled.section`
   position: absolute;
-  width: 90%;
   left: 14%;
   bottom: 7%;
 `;
@@ -69,4 +68,10 @@ export const Title = styled.span`
   line-height: 77px;
   color: ${({ theme }) => theme.color.white};
   margin-bottom: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+   font-size: 24px;
+   margin-bottom: 8px;
+   line-height: 29px;
+  }
 `;

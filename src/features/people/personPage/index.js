@@ -1,3 +1,4 @@
+import React from "react";
 import { PersonTile, PersonImage, FullName, FunctionName } from "./styled";
 
 export const Person = () => {
