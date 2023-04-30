@@ -9,6 +9,5 @@ export const Movie = () => (
     <BackgroundPoster />
     <AboutMovie />
     <CrewCast />
-    <CrewCast />
   </Wrapper>
 );
