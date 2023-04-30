@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Tile = styled.article`
     display: grid;
-grid-template-columns: 344px auto;
-grid-template-rows: auto auto;
+    grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
+
 grid-column-gap: 0px;
 grid-row-gap: 0px;
   background: ${({ theme }) => theme.color.white};

@@ -1,6 +1,7 @@
 import React from "react";
 import { MovieTile } from "..";
 import { Header, MoviesContainer, Wrapper, MovieLink } from "./styled";
+import { Pagination } from "../../../../common/Pagination";
 
 export const Movies = () => {
   return (
@@ -17,6 +18,7 @@ export const Movies = () => {
           <MovieLink to={"/movie"}> <MovieTile /> </MovieLink>
           <MovieLink to={"/movie"}> <MovieTile /> </MovieLink>
       </MoviesContainer>
+      <Pagination/>
     </Wrapper>
   );
 };

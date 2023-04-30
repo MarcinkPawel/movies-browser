@@ -4,6 +4,7 @@ import { Header,
         PeopleContainer, 
         Wrapper,
         PersonLink } from "./styled";
+import { Pagination } from "../../../common/Pagination";
 
 export const People = () => {
   return (
@@ -22,6 +23,7 @@ export const People = () => {
         <PersonLink to={"/person"} ><Person /></PersonLink>
         <PersonLink to={"/person"} ><Person /></PersonLink>
       </PeopleContainer>
+      <Pagination/>
     </Wrapper>
   );
 };

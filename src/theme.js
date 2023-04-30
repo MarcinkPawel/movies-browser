@@ -11,6 +11,8 @@ export const theme = {
         woodsmoke: "#18181B",
         heather: "#BAC7D580",
         cornflowerblue: "#6195ED",
+        pattensblue: "#D6E4FF",
+        scienceblue: "#0044CC",
       },
       breakpoint: {
         mobileMin: 576,
