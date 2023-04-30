@@ -2,13 +2,13 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
 import { Nav } from "./common/Nav";
-import { MovieTile } from "./features/movies/moviePage";
-import { Person } from "./features/people/personPage";
+import { Movie } from "./features/movies/moviesPage"
 import { Movies } from "./features/movies/moviePage/MoviesList";
 import { People } from "./features/people/peoplePage";
+import { PersonDetails } from "./features/people/PersonDetails";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { toMovie, toMovies, toPeople, toPerson } from "./routes";
-
+import React from 'react';
 
 export default () => (
       <ThemeProvider theme={theme}>
@@ -17,13 +17,13 @@ export default () => (
           <Nav />
           <Switch>
             <Route path={toMovie()}>
-              <MovieTile/>
+              <Movie/>
             </Route>
             <Route path={toMovies()}>
               <Movies/>
             </Route>
             <Route path={toPerson()}>
-              <Person />
+              <PersonDetails />
             </Route>
             <Route path={toPeople()}>
               <People />
