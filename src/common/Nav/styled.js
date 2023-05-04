@@ -3,6 +3,8 @@ import { Link, NavLink } from "react-router-dom"
 
 export const StyledLink = styled(Link)`
     text-decoration: none;
+    display: flex;
+    align-items: center;
 `;
 
 export const StyledNavLink = styled(NavLink)`
@@ -16,7 +18,6 @@ export const StyledNavLink = styled(NavLink)`
     &.active {
         border: 1px solid ${({ theme }) => theme.color.white};
         border-radius: 29px;
-
     }
 `;
 
@@ -24,25 +25,26 @@ export const Wrapper = styled.nav`
     background: ${({ theme }) => theme.color.black};
     color: ${({ theme }) => theme.color.white};
     min-height: 94px;
-    width: 100%;
-    margin: 0%, auto;
+    position: sticky;
+
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    flex-direction: column;
+  }
+`;
+
+export const ContentWidth = styled.div`
+    max-width: 1400px;
+    margin: 0 auto;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    flex-basis: auto;
-    justify-content: space-around;
+    padding: 23px 16px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        width: 100%;
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        flex-direction: column;
         padding: 32px 16px 16px 16px;
-        display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: repeat(2, 1fr);
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-
-    }
-
+  }
 `;
 
 export const Title = styled.p`
@@ -54,29 +56,36 @@ export const Title = styled.p`
     text-transform: capitalize;
     display: flex;
     align-items: flex-start;
+    white-space: nowrap;
     color: ${({ theme }) => theme.color.white};
 
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        justify-self: space-between;
+    }
+
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-        width: 106px;
-       font-size: 13px;
-       line-height: 17px;
-       justify-self: flex-start;
+        font-size: 18px;
+        line-height: 17px;
+        letter-spacing: -0.5px
+    }
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+        font-size: 13px;
     }
 `;
 
 export const Video = styled.img`
-    align-items: center;
     width: 40px;
-    margin-right: 12px;
+    height: 40px;
+    margin-right: 16px;
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-       width: 17px;
-       margin-right: 8px;
+       width: 20px;
+       height: 20px;
     }
 `;
 
 export const List = styled.ul`
-    margin-left: 104px;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -87,12 +96,12 @@ export const List = styled.ul`
         padding: 8px 12px;
         align-items: center;
         display: flex;
-
-        @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    }
+    
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         padding: 8px 12px;
         gap: 12px;
         margin-left: 19px;
-    }
     }
 `;
 
@@ -108,11 +117,8 @@ export const Search = styled.div`
 
     @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         width: 100%;
-        margin: auto;
         font-size: 13px;
         line-height: 16.9px;
-        grid-area: 2 / 1 / 3 / 3;
-
     }
 `;
 
@@ -139,21 +145,21 @@ export const InputStyled = styled.input`
 `;
 
 export const Section = styled.div`
-margin: 0;
-padding: 0;
-display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-basis: auto;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 80px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-       display: flex;
-       flex-direction: row;
-       justify-content: space-between;
-       align-items: center;
-       
-        grid-area: 1 / 1 / 2 / 2;
-        margin-bottom: 24px;
-}
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 32px;
+        gap: 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+    justify-content: space-between;
+  }
+
 `;
+

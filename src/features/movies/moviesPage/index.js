@@ -6,10 +6,12 @@ import { CrewCast } from "./CrewCast";
 import { Pagination } from "../../../common/Pagination"
 
 export const Movie = () => (
+  <>
   <Wrapper>
     <BackgroundPoster />
     <AboutMovie />
+  </Wrapper>
     <CrewCast />
     <Pagination/>
-  </Wrapper>
+    </>
 );

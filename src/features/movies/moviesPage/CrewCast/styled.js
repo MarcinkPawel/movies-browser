@@ -30,8 +30,7 @@ export const Title = styled.h1`
 
 export const List = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fill, 208px);
   gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
