@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         color: ${({ theme }) => theme.color.black};
         display: inherit;
         font-family: 'Inter', sans-serif;
-        background: ${({ theme }) => theme.color.mercury};
+        background: ${({ theme }) => theme.color.whisper};
         font-family: 'Poppins', sans-serif;
     }
 `;
