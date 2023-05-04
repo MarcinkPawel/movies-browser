@@ -1,8 +1,9 @@
 import React from "react";
-import { Tile, Image, Content, Title, Details, Label, Info, Description} from "./styled";
+import { Tile, Image, Content, Title, Details, Label, Info, Description, Wrapper} from "./styled";
 
 
 export const AboutPerson = () => (
+    <Wrapper>
     <Tile>
       <Image src={""} alt="Plakat filmu" />
       <Content>
@@ -19,4 +20,5 @@ export const AboutPerson = () => (
           in order to save her father.
         </Description>
     </Tile>
+    </Wrapper>
 );

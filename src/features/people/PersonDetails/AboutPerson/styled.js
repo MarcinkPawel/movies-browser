@@ -1,24 +1,27 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 export const Tile = styled.article`
   display: grid;
-  grid-template-columns: 399px auto;
-  grid-template-rows: auto auto;
+  grid-template-columns: minmax(auto, 399px) 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-rows: auto 1fr;
   grid-column-gap: 0px;
-  grid-row-gap: 0px;
   background: ${({ theme }) => theme.color.white};
   padding: 40px;
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   max-width: 1368px;
-  margin: 24px 0 40px;
+  margin-top: 56px;
+  align-self: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    margin: 16px;
+    gap: 0 16px;
     padding: 16px;
-    max-width: 288px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-row-start: inherit;
+    grid-template-columns:  minmax(auto, 114px) 1fr;
   }
 `;
 

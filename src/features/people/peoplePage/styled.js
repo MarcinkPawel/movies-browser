@@ -10,7 +10,6 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   max-width: 1368px;
-  background: ${({ theme }) => theme.color.mercury};
   margin: 40px auto 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
