@@ -24,7 +24,6 @@ export const StyledNavLink = styled(NavLink)`
 export const Wrapper = styled.nav`
     background: ${({ theme }) => theme.color.black};
     color: ${({ theme }) => theme.color.white};
-    min-height: 94px;
     position: sticky;
 
 

@@ -14,8 +14,12 @@ import {
 } from "./styled";
 import video from "../../images/Video.svg";
 import magnifier from "../../images/search.svg";
+import { useLocation } from "react-router-dom";
 
-export const Nav = () => (
+export const Nav = () => {
+  const location = useLocation();
+
+  return(
   <Wrapper>
     <ContentWidth>
       <Section>
@@ -36,8 +40,16 @@ export const Nav = () => (
       </Section>
         <Search>
           <Magnifier src={magnifier} />
-          <InputStyled placeholder={`Search for movies..`} />
+          <InputStyled 
+            placeholder={
+              `Search for movies..
+              ${location.pathname.includes("movies" 
+                      ? "movies..." 
+                      : "people...")
+              }`} 
+          />
         </Search>
     </ContentWidth>
   </Wrapper>
-);
+  );
+};

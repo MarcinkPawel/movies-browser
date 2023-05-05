@@ -16,6 +16,10 @@ export const CrewCast = () => (
       <Person />
       <Person />
       <Person />
+    </List>
+    <Title>Crew</Title>
+    <List>
+      <Person />
       <Person />
     </List>
   </Wrapper>
