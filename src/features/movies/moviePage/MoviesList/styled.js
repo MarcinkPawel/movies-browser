@@ -9,10 +9,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 1368px;
-  //background: ${({ theme }) => theme.color.mercury};
   margin: 40px auto 0;
   padding: 16px;
+  max-width: 1368px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     max-width: 320px;
@@ -35,7 +34,7 @@ export const Header = styled.h1`
 `;
 export const MoviesContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr;
   gap: 24px;
 

@@ -1,25 +1,67 @@
-import { Wrapper, Text, PageNumber, Button, StyledVector } from "./styled";
+import { Wrapper, Text, Number, Button, StyledVector, ButtonText } from "./styled";
 import React from "react";
 
-export const Pagination = () => {
+export const Pagination = (
+    {pageNumber, 
+    totalPages, 
+    goToFirstPage, 
+    goToNextPage, 
+    goToPreviousPage, 
+    goToLastPage }) => {
+        
+    const isFirstPage = pageNumber === 1;
+    const isLastPage = pageNumber === totalPages;
+
     return (
         <Wrapper>
-            <Button>
-                <StyledVector/>
-                First
+            <Button
+                onClick={goToFirstPage}
+                disabled={isFirstPage}
+            >
+                <StyledVector
+                    disabled={isFirstPage}
+                />
+                <StyledVector
+                    mobile="true"
+                    disabled={isFirstPage}
+                />
+            <ButtonText>First</ButtonText>   
             </Button>
-            <Button>
-                <StyledVector/>
-                Previous
+            <Button
+                onClick={goToPreviousPage}
+                disabled={isFirstPage}
+            >
+                <StyledVector
+                disabled={isFirstPage}
+                />
+            <ButtonText>Previous</ButtonText>   
             </Button>
             <Text>Page </Text>
-            <PageNumber></PageNumber>
+            <Number>{pageNumber}</Number>
             <Text>of </Text>
-            <PageNumber></PageNumber>
-            <Button> 
-                Next
+            <Number>{totalPages}</Number>
+            <Button
+                onClick={goToNextPage}
+                disabled={isLastPage}
+            > 
+            <ButtonText>Next</ButtonText>   
+                <StyledVector
+                    right="true"
+                    disabled={isLastPage}
+                />
             </Button>
-            <Button>Last</Button>
+            <Button>
+            <ButtonText>Last</ButtonText>               
+                <StyledVector
+                    right="true"
+                    disabled={isLastPage}
+                />
+                <StyledVector
+                    right="true"
+                    mobile="true"
+                    disabled={isLastPage}
+                />
+            </Button>
         </Wrapper>
     )
 };

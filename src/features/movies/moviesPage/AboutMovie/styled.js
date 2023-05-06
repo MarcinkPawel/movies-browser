@@ -1,21 +1,25 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  max-width: 1368px;
+  margin: 64px auto 0;
+`;
+
 export const Tile = styled.article`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
-
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-  background: ${({ theme }) => theme.color.white};
-  padding: 40px;
-  box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-  max-width: 1368px;
-  margin: 24px 0 40px;
+    justify-content: center;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background: ${({ theme }) => theme.color.white};
+    padding: 40px;
+    box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+    max-width: 1368px;
+    margin: 24px 0 40px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin: 16px;
     padding: 16px;
-    max-width: 288px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -109,10 +113,11 @@ export const Info = styled.span`
 `;
 
 export const Description = styled.div`
-grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 2 / 3 / 4;
   font-size: 20px;
   margin: 24px 0 0 0;
   line-height: 1.6;
+  width: fit-content;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 14px;

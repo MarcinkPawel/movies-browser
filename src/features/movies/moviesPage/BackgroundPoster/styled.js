@@ -4,7 +4,10 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
 `;
 
 export const PosterSpace = styled.div`
@@ -52,8 +55,7 @@ export const PosterSpace = styled.div`
 
 export const Poster = styled.img`
   max-width: 100%;
-  max-height: 769px;
-  position: relative;
+  height: auto;
   z-index: -1;
 `;
 
@@ -75,4 +77,40 @@ export const Title = styled.span`
    margin-bottom: 8px;
    line-height: 29px;
   }
+`;
+
+export const RateStyledA = styled.p`
+    color: ${({ theme }) => theme.color.white};
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.3;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+      font-size: 14px;
+  }
+`;
+
+export const RateStyledB = styled.p`
+    color: ${({ theme }) => theme.color.white};
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+ 
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+      font-size: 10px;
+  }
+`;
+
+export const Votes = styled.p`
+    color: ${({ theme }) => theme.color.white};
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 17px;
+ 
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+      font-size: 10px;
+      line-height: 12px;
+
+  }
+
 `;

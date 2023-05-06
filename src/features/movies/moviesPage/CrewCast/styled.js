@@ -1,10 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  //display: flex;
-  //flex-direction: column;
   max-width: 1368px;
-  background: ${({ theme }) => theme.color.mercury};
   margin: 64px auto 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
@@ -21,6 +18,7 @@ export const Title = styled.h1`
   color: ${({ theme }) => theme.color.black};
   line-height: 1.2;
   margin-bottom: 24px;
+  margin-top: 64px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 18px;
@@ -32,6 +30,8 @@ export const List = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 208px);
   gap: 24px;
+  margin-bottom: 64px;
+
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
