@@ -42,7 +42,7 @@ export const Nav = () => {
           <Magnifier src={magnifier} />
           <InputStyled 
             placeholder={
-              `Search for movies..
+              `Search for
               ${location.pathname.includes("movies" 
                       ? "movies..." 
                       : "people...")

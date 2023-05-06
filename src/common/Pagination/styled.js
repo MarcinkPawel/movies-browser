@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     margin: 40px 0 103px;
     position: static;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.MobileMax}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         gap: 8px;
         margin: 32px 44px 59px 44px;
     }
