@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Poster, Tile, Title, Year, Details } from "./styled";
 import { Rating, Star, Rate, Votes } from "../../../common/Rating";
 import { MovieGenre, MovieType } from "../MovieGenre";
-import { fetchMovieDetailsAndCredits } from "./movieDetailsSlice";
+import { fetchMovieDetails } from "./movieDetailsSlice";
 import { getMovieID } from "../moviesSlice";
 import { APIImageUrl } from "../../getData";
 import star from "../../../images/star.svg";
@@ -25,7 +25,7 @@ export const MovieTile = ({
 
   const dispatchMvoieDetailsHandler = () => {
     dispatch(getMovieID(id));
-    dispatch(fetchMovieDetailsAndCredits());
+    dispatch(fetchMovieDetails());
   };
 
   return (
