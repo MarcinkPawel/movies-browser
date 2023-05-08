@@ -1,7 +1,7 @@
 import React from "react";
-import { MovieTile } from "..";
+import { MovieTile } from "../moviePage";
 import { Header, MoviesContainer, Wrapper, MovieLink } from "./styled";
-import { Pagination } from "../../../../common/Pagination";
+import { Pagination } from "../../../common/Pagination";
 
 export const Movies = () => {
   return (

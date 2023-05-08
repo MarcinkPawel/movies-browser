@@ -3,7 +3,7 @@ import { GlobalStyle } from "./GlobalStyle";
 import { theme } from "./theme";
 import { Nav } from "./common/Nav";
 import { Movie } from "./features/movies/moviesPage"
-import { Movies } from "./features/movies/moviePage/MoviesList";
+import { Movies } from "./features/movies/MoviesList";
 import { People } from "./features/people/peoplePage";
 import { PersonDetails } from "./features/people/PersonDetails";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
