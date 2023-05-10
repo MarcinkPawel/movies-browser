@@ -2,20 +2,21 @@ import React from "react";
 import { Rating, Star } from "../../../../common/Rating";
 import { Wrapper, PosterSpace, Poster, Section, Title, RateStyledA, RateStyledB, Votes } from "./styled";
 import star from "../../../../images/star.svg";
-import posterBig from "../../../../images/posterBig.png";
+import { imagesFullApi } from "../../../getData";
 
-export const BackgroundPoster = () => (
+
+export const BackgroundPoster = ({ poster, title, rate, voteCount }) => (
   <Wrapper>
     <PosterSpace>
-      <Poster src={posterBig} />   
+      <Poster src={`${imagesFullApi}/original${poster}`} />   
       <Section>
-        <Title>Mulan long Title</Title>
+        <Title>{title}</Title>
         <Rating>
           <Star src={star} />
-          <RateStyledA>3</RateStyledA>
+          <RateStyledA>{rate}</RateStyledA>
           <RateStyledB>/ 10</RateStyledB>
         </Rating>
-          <Votes> 311 votes</Votes>
+          <Votes>{voteCount} votes</Votes>
       </Section>
     </PosterSpace>
   </Wrapper>

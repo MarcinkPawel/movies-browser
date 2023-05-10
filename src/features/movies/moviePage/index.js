@@ -2,25 +2,47 @@ import React from "react";
 import { Poster, Tile, Title, Year, Details } from "./styled";
 import { Rating, Star, Rate, Votes } from "../../../common/Rating";
 import { MovieGenre, MovieType } from "../MovieGenre";
-import moviePoster from "../../../images/poster.png";
+import Video from "../../../images/Video.svg";
 import star from "../../../images/star.svg";
+import { imagesAPI300x450 } from "../../getData";
+import { Genres } from "../MovieGenre/genresList";
 
-export const MovieTile = () => {
+export const MovieTile = ({
+  poster,
+  title,
+  date,
+  id,
+  genres,
+  rate,
+  voteCount,
+}) => {
+  const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
   return (
-    <Tile>
-      <Poster src={moviePoster} />
+    <Tile to={`/movie/?id=${id}`} key={id}>
+      <Poster
+        src={poster == null ? Video : `${imagesAPI300x450}${poster}`}
+        alt={title}
+      />
       <Details>
-        <Title>TITLE</Title>
-        <Year>YEAR</Year>
+        <Title>{title}</Title>
+        <Year>{date ? date.slice(0, 4) : null}</Year>
         <MovieGenre>
-          <MovieType>Action</MovieType>
-          <MovieType>Adventure</MovieType>
-          <MovieType>Action</MovieType>
+          {genres
+            ? movieGenres.map((genre) => (
+                <MovieType key={genre.id}>{genre.name}</MovieType>
+              ))
+            : null}
         </MovieGenre>
         <Rating>
-          <Star src={star} />
-          <Rate>4,4</Rate>
-          <Votes>23 votes</Votes>
+          {rate !== 0 && voteCount !== 0 ? (
+            <>
+              <Star src={star} />
+              <Rate>{rate ? rate : null}</Rate>
+              <Votes>{voteCount ? `${voteCount} votes` : null} </Votes>
+            </>
+          ) : (
+            <Votes>No votes yet</Votes>
+          )}
         </Rating>
       </Details>
     </Tile>

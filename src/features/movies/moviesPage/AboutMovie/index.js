@@ -13,38 +13,53 @@ import {
 } from "./styled";
 import { Rating, Star, Rate, Votes } from "../../../../common/Rating";
 import { MovieGenre, MovieType } from "../../MovieGenre";
-import poster from "../../../../images/poster.png";
+import { imagesAPI600x900, imagesAPIw400 } from "../../../getData";
+import Video from "../../../../images/Video.svg";
 import star from "../../../../images/star.svg";
 
-export const AboutMovie = ({ aboutMovie }) => {
+
+export const AboutMovie = ({
+  aboutMovie,
+  poster,
+  title,
+  date,
+  genres,
+  productionCountry,
+  release,
+  rate,
+  voteCount,
+  overview,
+}) => {
+
+  // const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
+
   return (
     <Wrapper>
       <Tile>
-        <Image src={poster} alt="Plakat filmu" />
+        <Image src={poster ? `${imagesAPIw400}${poster}` : Video} />
         <Content>
-          <Title>Mulan</Title>
-          <Year>2020</Year>
+          <Title>{title}</Title>
+          <Year>{date ? date.slice(0, 4) : null}</Year>
           <Details>
-            <Label>Production:</Label><Info>USA</Info> 
-            <Label>Release date:</Label><Info>2009</Info>
+            <Label>Production:</Label>
+            <Info>
+              {productionCountry.map((country) => country.name).join(", ")}
+            </Info>
+            <Label>Release date:</Label>
+            <Info>{new Date(release).toLocaleDateString()}</Info>
           </Details>
           <MovieGenre gap={aboutMovie}>
-            <MovieType>Action</MovieType>
-            <MovieType>Adventure</MovieType>
-            <MovieType>Action</MovieType>
+          {genres.map((genre) => (
+          <MovieType key={genre.id}>{genre.name}</MovieType>
+          ))}
           </MovieGenre>
           <Rating>
             <Star src={star} />
-            <Rate>4,4</Rate>
-            <Votes>23 votes</Votes>
+            <Rate>{rate.toFixed(1)}</Rate>
+            <Votes>{voteCount} votes</Votes>
           </Rating>
-          </Content>
-          <Description>
-            A young Chinese maiden disguises herself as a male warrior in order to
-            save her father. Disguises herself as a male warrior in order to save
-            her father. A young Chinese maiden disguises herself as a male warrior
-            in order to save her father.
-          </Description>
+        </Content>
+        <Description>{overview}</Description>
       </Tile>
     </Wrapper>
   );
