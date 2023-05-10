@@ -40,16 +40,16 @@ export const Movies = () => {
       <Header>Popular movies</Header>
       <MoviesContainer>
       {movieList.results.map(movie => (
-          <MovieLink to={"/movie"} key={movie.id}>
+          <MovieLink to={`/movie/${movie.id}`} key={movie.id}>
              <MovieTile 
-             id={movie.id}
-             key={`${movie.id}${movie.index}`}
-             poster={movie.poster_path}
-             title={movie.title}
-             date={movie.release_date}
-             rate={movie.vote_average.toFixed(1)}
-             voteCount={movie.vote_count}
-             genres={movie.genre_ids}
+              //id={movie.id}
+              //key={`${movie.id}${movie.index}`}
+              poster={movie.poster_path}
+              title={movie.title}
+              date={movie.release_date}
+              rate={movie.vote_average.toFixed(1)}
+              voteCount={movie.vote_count}
+              genres={movie.genre_ids}
              />
           </MovieLink>
            ))}
