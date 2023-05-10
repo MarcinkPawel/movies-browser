@@ -1,5 +1,7 @@
 import error from "../../images/Error.svg"
 import { Icon, MainInfo, Wrapper, Info, Button } from "./styled"
+import React from "react";
+
 
 export const Error = () => {
     return (

@@ -1,5 +1,5 @@
 import { Container, SearchInfo, ResultList } from "./styled";
-
+import React from "react";
 
 export const SearchResult = () => {
   return (
