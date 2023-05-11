@@ -117,7 +117,7 @@ export const Search = styled.div`
   border-color: 1px, solid, ${({ theme }) => theme.color.mystic};
   margin: 23px, 292px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     height: 44px;
     width: 100%;
   }
