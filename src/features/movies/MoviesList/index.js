@@ -6,11 +6,12 @@ import { Header, MoviesContainer, Wrapper, MovieLink } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
-import {  SearchResult } from "../../../common/SearchResult";
+import { SearchResult } from "../../../common/SearchResult";
 import { fetchPopularMovies, selectPopularMoviesList, selectPopularMoviesStatus } from "../popularMoviesSlice";
 import { useLocation } from "react-router-dom";
 import { fetchSearchMoviesList, selectSearchMoviesStatus } from "../../search/searchSlice";
 import { useQueryParameters } from "../../search/queryParameters";
+import { pageQueryParamName, searchQueryParamName, } from "../../search/queryParamNames"
 
 export const Movies = () => {
 
@@ -19,11 +20,11 @@ export const Movies = () => {
   const movieList = useSelector(selectPopularMoviesList);
   const statusSearchMovie = useSelector(selectSearchMoviesStatus);
   const location = useLocation().pathname
-  const searchQuery = useQueryParameters("search")
-  const page = useQueryParameters("page");
+  const searchQuery = useQueryParameters(searchQueryParamName)
+  const page = useQueryParameters(pageQueryParamName);
   
   useEffect(() => {
-    if (location.includes("movie") && location.includes("search"))
+    if (location.includes("movie") && location.includes(searchQueryParamName))
       dispatch(fetchSearchMoviesList({query: searchQuery, page: page}));
     else dispatch(fetchPopularMovies(page));
   }, []);
