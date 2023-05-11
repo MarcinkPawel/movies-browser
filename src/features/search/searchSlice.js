@@ -9,6 +9,7 @@ const searchSlice = createSlice({
     statusMovie: null,
     statusPeople: null,
     page: 1,
+    open: false,
   },
 
   reducers: {
@@ -44,6 +45,9 @@ const searchSlice = createSlice({
       statusPople: "error",
       peopleList: null,
     }),
+    fetchOpen: (state, { payload: open }) => {
+      state.open = open;
+    },
   },
 });
 
@@ -53,7 +57,8 @@ export const {
   fetchSearchMoviesListError,
   fetchSearchPeopleList,
   fetchSearchPeopleListSuccess,
-  fetchSearchPeopleListError
+  fetchSearchPeopleListError,
+  fetchOpen,
 } = searchSlice.actions;
 
 export const selectState = state => state.search;
@@ -61,4 +66,7 @@ export const selectMovies = state => state.search.moviesList;
 export const selectSearchPeople = state => state.search.peopleList;
 export const selectSearchMoviesStatus = state => state.search.statusMovie;
 export const selectSearchPeopleStatus = state => state.search.statusPeople;
+export const selectOpen = state => state.search.open;
+
+
 export default searchSlice.reducer;
