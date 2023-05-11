@@ -24,7 +24,12 @@ export const StyledNavLink = styled(NavLink)`
     padding: 8px 12px;
     font-size: 12px;
     gap: 12px;
-    margin-left: 19px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
+    padding: 8px ;
+    font-size: 12px;
+    gap: 12px;
   }
 `;
 
@@ -38,11 +43,18 @@ export const Wrapper = styled.nav`
     flex-direction: column;
     padding: 16px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
+    margin: 0;
+    width: 100%;
+    background: ${({ theme }) => theme.color.black};
+    padding: 12px;
+  }
 `;
 
 export const ContentWidth = styled.div`
   max-width: 1400px;
-  margin: 0 auto;
+  margin: auto;
   display: grid;
   gap: 16px;
   grid-template-columns: auto minmax(205px, 432px);
@@ -51,6 +63,12 @@ export const ContentWidth = styled.div`
     width: 100%;
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 `;
 
@@ -63,6 +81,7 @@ export const Title = styled.p`
   text-transform: capitalize;
   display: flex;
   align-items: flex-start;
+  flex-shrink: 0;
   white-space: nowrap;
   color: ${({ theme }) => theme.color.white};
 
@@ -77,6 +96,11 @@ export const Title = styled.p`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
     font-size: 13px;
     line-height: 20px;
   }
@@ -128,6 +152,16 @@ export const Search = styled.div`
     font-size: 13px;
     line-height: 16.9px;
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+    height: 44px;
+    width: 100%;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
+    height: 44px;
+    width: auto;
+  }
 `;
 
 export const Magnifier = styled.img`
@@ -153,15 +187,16 @@ export const InputStyled = styled.input`
 `;
 
 export const Section = styled.div`
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 80px;
+  display: flex;
+  gap: 80px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     justify-content: space-between;
+    gap: 20px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
     justify-content: space-between;
+    gap: 10px;
   }
 `;
