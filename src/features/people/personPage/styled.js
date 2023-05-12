@@ -1,4 +1,10 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
+export const StyledLink = styled(Link)`
+    text-decoration: none;
+    display: flex;
+`;
 
 export const PersonTile = styled.div`
   width: 208px;
