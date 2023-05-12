@@ -39,7 +39,7 @@ export const AboutMovie = ({
         <Image src={poster ? `${imagesAPIw400}${poster}` : Video} />
         <Content>
           <Title>{title}</Title>
-          <Year>{date ? date.slice(0, 4) : null}</Year>
+          <Year>{date ? date.toString().slice(0, 4) : null}</Year>
           <Details>
             <Label>Production:</Label>
             <Info>
