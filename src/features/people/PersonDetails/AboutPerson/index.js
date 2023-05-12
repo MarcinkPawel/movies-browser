@@ -5,12 +5,12 @@ import { Tile, Image, Content, Title, Details, Label, Info, Description, Wrapper
 export const AboutPerson = () => (
     <Wrapper>
     <Tile>
-      <Image src={""} alt="Plakat filmu" />
+      <Image src={""} alt="" />
       <Content>
-        <Title>Mulan</Title>
+        <Title>Person</Title>
         <Details>
-          <Label>Date of birth:</Label><Info>06.04.1989</Info> 
-          <Label>Place of birth</Label><Info>Warsaw, Poland</Info>
+          <Label>Date of birth: <Info>06.04.1989</Info></Label> 
+          <Label>Place of birth: <Info>Warsaw, Poland</Info></Label>
         </Details>
         </Content>
         <Description>
