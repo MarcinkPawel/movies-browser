@@ -18,6 +18,8 @@ import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { SearchResult } from "../../../common/SearchResult";
 import { useParams } from "react-router-dom";
+import { Wrapper, Title, List } from "../../movies/moviesPage/CrewCast/styled";
+import { PersonTile } from "../../people/personPage/styled";
 
 export const Movie = () => {
   const dispatch = useDispatch();
@@ -64,7 +66,38 @@ export const Movie = () => {
           rate={movieInfo.movieDescription.vote_average}
           overview={movieInfo.movieDescription.overview}
         />
-        <CrewCast/>
+        <Wrapper>
+              <Title
+                title={"Cast"} pageSection={true}
+              />
+              <List>
+              {movieInfo.movieCrew.cast.slice(0, 20).map(actor =>
+                   <PersonTile
+                   id={actor.id}
+                   key={`${actor.id}${actor.character}`}
+                   name={actor.name}
+                   profile_path={actor.profile_path}
+                   role={actor.character}
+                 />
+               )}
+              </List>
+            </Wrapper>
+            <Wrapper>
+              <Title
+                title={"Crew"} pageSection={true}
+              />
+              <List>
+              {movieInfo.movieCrew.crew.slice(0, 10).map(person =>
+                   <PersonTile
+                   key={`${person.id}${person.job}`}
+                   name={person.name}
+                   profile_path={person.profile_path}
+                   role={person.job}
+                   id={person.id}
+                 />
+               )}
+              </List>
+            </Wrapper>
       </>
     );
 

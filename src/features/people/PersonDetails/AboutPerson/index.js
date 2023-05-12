@@ -1,24 +1,38 @@
 import React from "react";
-import { Tile, Image, Content, Title, Details, Label, Info, Description, Wrapper} from "./styled";
+import {
+  Tile,
+  Image,
+  Content,
+  Title,
+  Details,
+  Label,
+  Info,
+  Description,
+  Wrapper,
+} from "./styled";
+import { imagesAPIw400 } from "../../../getData";
+import noPersonImage from "../../../../images/noPersonImage.svg";
 
-
-export const AboutPerson = () => (
-    <Wrapper>
+export const AboutPerson = ({
+  poster,
+  name,
+  birthday,
+  birthplace,
+  biography,
+}) => (
+  <Wrapper>
     <Tile>
-      <Image src={""} alt="Plakat filmu" />
+      <Image src={poster ? `${imagesAPIw400}${poster}` : noPersonImage} />
       <Content>
-        <Title>Mulan</Title>
+        <Title>{name}</Title>
         <Details>
-          <Label>Date of birth:</Label><Info>06.04.1989</Info> 
-          <Label>Place of birth</Label><Info>Warsaw, Poland</Info>
+          <Label>Date of birth:</Label>
+          <Info>{new Date(birthday).toLocaleDateString()}</Info>
+          <Label>Place of birth</Label>
+          <Info>{birthplace}</Info>
         </Details>
-        </Content>
-        <Description>
-          A young Chinese maiden disguises herself as a male warrior in order to
-          save her father. Disguises herself as a male warrior in order to save
-          her father. A young Chinese maiden disguises herself as a male warrior
-          in order to save her father.
-        </Description>
+      </Content>
+      <Description>{biography}</Description>
     </Tile>
-    </Wrapper>
+  </Wrapper>
 );
