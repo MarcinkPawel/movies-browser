@@ -17,7 +17,6 @@ import { imagesAPI600x900, imagesAPIw400 } from "../../../getData";
 import Video from "../../../../images/Video.svg";
 import star from "../../../../images/star.svg";
 
-
 export const AboutMovie = ({
   aboutMovie,
   poster,
@@ -30,7 +29,6 @@ export const AboutMovie = ({
   voteCount,
   overview,
 }) => {
-
   // const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
 
   return (
@@ -41,21 +39,25 @@ export const AboutMovie = ({
           <Title>{title}</Title>
           <Year>{date ? date.slice(0, 4) : null}</Year>
           <Details>
-            <Label>Production:</Label>
-            <Info>
-              {productionCountry.map((country) => country.name).join(", ")}
-            </Info>
-            <Label>Release date:</Label>
-            <Info>{new Date(release).toLocaleDateString()}</Info>
+            <Label>
+              Production:{" "}
+              <Info>
+                {productionCountry.map((country) => country.name).join(", ")}
+              </Info>
+            </Label>
+            <Label>
+              Release date:{" "}
+              <Info>{new Date(release).toLocaleDateString()}</Info>
+            </Label>
           </Details>
           <MovieGenre gap={aboutMovie}>
-          {genres.map((genre) => (
-          <MovieType key={genre.id}>{genre.name}</MovieType>
-          ))}
+            {genres.map((genre) => (
+              <MovieType key={genre.id}>{genre.name}</MovieType>
+            ))}
           </MovieGenre>
           <Rating>
             <Star src={star} />
-            <Rate>{rate.toFixed(1)}</Rate>
+            <Rate>{rate.toFixed(1)}</Rate>/ 10
             <Votes>{voteCount} votes</Votes>
           </Rating>
         </Content>
