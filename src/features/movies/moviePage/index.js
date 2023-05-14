@@ -18,7 +18,7 @@ export const MovieTile = ({
 }) => {
   const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
   return (
-    <Tile to={`/movie/?id=${id}`} key={id}>
+    <Tile to={`/movie/?id=${id}`} key={id} >
       <Poster
         src={poster == null ? Video : `${imagesAPI300x450}${poster}`}
         alt={title}
