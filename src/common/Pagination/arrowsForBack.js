@@ -1,7 +1,7 @@
 import { theme } from "../../theme";
 
 const arrowColor = (disabled) => {
-    return disabled ? theme.color.waterloo : theme.color.scienceBlue;
+    return disabled ? theme.color.waterloo : theme.color.scienceblue;
 };
 
 export const BackArrow = ({ disabled }) => (

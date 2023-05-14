@@ -19,7 +19,7 @@ import {
     fetchSearchPeopleList,
   } from "../../features/search/searchSlice";
   import { useLocation } from "react-router-dom";
-  import { useDispatch, useSelector } from "react-redux";
+  import { useDispatch } from "react-redux";
   
   export const Pagination = ({ page, totalPages }) => {
     const replaceQueryParameters = useReplaceQueryParameters();
