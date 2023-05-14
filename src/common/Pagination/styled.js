@@ -36,7 +36,7 @@ export const Button = styled.button`
         cursor: not-allowed;
     };
     
-    @media (max-width: ${({theme}) => theme.breakPoints.mobileMax}px) {
+    @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
         gap: 4px;
     };
 `;
