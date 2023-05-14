@@ -25,7 +25,7 @@ export const MovieTile = ({
       />
       <Details>
         <Title>{title}</Title>
-        <Year>{date ? date.slice(0, 4) : null}</Year>
+        <Year>{date ? date.toString().slice(0, 4) : null}</Year>
         <MovieGenre>
           {genres
             ? movieGenres.map((genre) => (
