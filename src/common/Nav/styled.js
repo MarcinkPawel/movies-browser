@@ -10,8 +10,7 @@ export const StyledLink = styled(Link)`
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-size: 14px;
-  font-weight: 600;
-  line-height: 21px;
+  font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   padding: 8px 12px;
   color: ${({ theme }) => theme.color.white};
 
