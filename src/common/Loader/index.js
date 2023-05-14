@@ -9,9 +9,6 @@ export const Loader = () => {
 
     return (
         <Wrapper>
-            <Info>
-                Search results for "{query}"
-            </Info>
             <Icon src={iconspinner} />
         </Wrapper>
     );
