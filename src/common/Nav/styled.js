@@ -1,131 +1,125 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom"
 
 export const StyledLink = styled(Link)`
-  text-decoration: none;
-  display: flex;
-  align-items: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
 `;
 
 export const StyledNavLink = styled(NavLink)`
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: ${({ theme }) => theme.fontWeight.semiBold};
-  padding: 8px 12px;
-  color: ${({ theme }) => theme.color.white};
-
-  &.active {
-    border: 1px solid ${({ theme }) => theme.color.white};
-    border-radius: 29px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
     padding: 8px 12px;
-    font-size: 12px;
-    gap: 12px;
-  }
+    color: ${({ theme }) => theme.color.white};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
-    padding: 8px ;
-    font-size: 12px;
-    gap: 12px;
-  }
+    &.active {
+        border: 1px solid ${({ theme }) => theme.color.white};
+        border-radius: 29px;
+    }
 `;
 
 export const Wrapper = styled.nav`
-  background: ${({ theme }) => theme.color.black};
-  color: ${({ theme }) => theme.color.white};
-  padding: 22px 16px;
-  position: sticky;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    flex-direction: column;
-    padding: 16px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
-    margin: 0;
-    width: 100%;
     background: ${({ theme }) => theme.color.black};
-    padding: 12px;
+    color: ${({ theme }) => theme.color.white};
+    position: sticky;
+
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    flex-direction: column;
   }
 `;
 
 export const ContentWidth = styled.div`
-  max-width: 1400px;
-  margin: auto;
-  display: grid;
-  gap: 16px;
-  grid-template-columns: auto minmax(205px, 432px);
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 23px 16px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 24px;
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        flex-direction: column;
+        padding: 32px 16px 16px 16px;
   }
 `;
 
 export const Title = styled.p`
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 40px;
-  letter-spacing: -1.5px;
-  margin-left: 10px;
-  text-transform: capitalize;
-  display: flex;
-  align-items: flex-start;
-  flex-shrink: 0;
-  white-space: nowrap;
-  color: ${({ theme }) => theme.color.white};
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 40px;
+    letter-spacing: -1.5px;
+    margin-left: 10px;
+    text-transform: capitalize;
+    display: flex;
+    align-items: flex-start;
+    white-space: nowrap;
+    color: ${({ theme }) => theme.color.white};
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-    justify-self: space-between;
-  }
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        justify-self: space-between;
+    }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    font-size: 18px;
-    line-height: 21px;
-    letter-spacing: -0.5px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 18px;
+        line-height: 17px;
+        letter-spacing: -0.5px
+    }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
-    font-size: 13px;
-    line-height: 20px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
-    font-size: 13px;
-    line-height: 20px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+        font-size: 13px;
+    }
 `;
 
 export const Video = styled.img`
-  width: 40px;
-  height: 40px;
-  margin-right: 16px;
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 20px;
-    height: 20px;
-  }
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+       width: 20px;
+       height: 20px;
+    }
 `;
 
-export const List = styled.li`
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  list-style: none;
-  gap: 16px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    padding: 8px 12px;
-    align-items: center;
+export const List = styled.ul`
     display: flex;
-  }
+    align-items: center;
+    flex-direction: row;
+    list-style: none;
+    gap: 16px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        padding: 8px 12px;
+        align-items: center;
+        display: flex;
+    }
+    
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        padding: 8px 12px;
+        gap: 12px;
+        margin-left: 19px;
+    }
 `;
+
+export const Section = styled.div`
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 80px;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 32px;
+        gap: 0;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+    justify-content: space-between;
+  }
+
+`;
+
