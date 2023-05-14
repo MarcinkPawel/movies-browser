@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
 ` 
 
 export const Icon = styled.img`
     height: 91px;
     justify-content: center;
-    align-items: center;
     margin-top: 219px;
 
     animation: spin;
