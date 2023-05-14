@@ -16,20 +16,20 @@ export default () => (
         <HashRouter>
           <Nav />
           <Switch>
-            <Route path={toMovie()}>
+            <Route path="/movie">
               <Movie/>
             </Route>
-            <Route path={toMovies()}>
+            <Route path="/movies">
               <Movies/>
             </Route>
-            <Route path={toPerson()}>
+            <Route path="/person">
               <PersonDetails />
             </Route>
-            <Route path={toPeople()}>
+            <Route path="/people">
               <People />
             </Route>
             <Route>
-              <Redirect to={toMovies()} />
+              <Redirect to="/movies?page=1"/>
             </Route>
           </Switch>
         </HashRouter>
