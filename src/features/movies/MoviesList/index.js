@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MovieTile } from "../moviePage";
-import { Header, MoviesContainer, Wrapper, MovieLink } from "./styled";
+import { Header, MoviesContainer, Wrapper } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
@@ -41,10 +41,9 @@ export const Movies = () => {
       <Header>Popular movies</Header>
       <MoviesContainer>
       {movieList.results.map(movie => (
-          <MovieLink to={`/movie/${movie.id}`} key={movie.id}>
              <MovieTile 
-              //id={movie.id}
-              //key={`${movie.id}${movie.index}`}
+              id={movie.id}
+              key={`${movie.id}${movie.index}`}
               poster={movie.poster_path}
               title={movie.title}
               date={movie.release_date}
@@ -52,7 +51,6 @@ export const Movies = () => {
               voteCount={movie.vote_count}
               genres={movie.genre_ids}
              />
-          </MovieLink>
            ))}
       </MoviesContainer>
     <Pagination/>
