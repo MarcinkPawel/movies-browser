@@ -28,15 +28,21 @@ export const Title = styled.h1`
 
 export const List = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
   margin: 24px auto 40px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
     grid-column-gap: 16px;
-    grid-row-gap: 16px;
   }
 `;
+
+
