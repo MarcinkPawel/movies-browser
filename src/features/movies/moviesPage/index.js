@@ -14,7 +14,8 @@ import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { SearchResult } from "../../../common/SearchResult";
 import { Wrapper, Title, List } from "../../movies/moviesPage/CrewCast/styled";
-import { PersonTile } from "../../people/personPage/styled";
+
+import { Person } from "../../people/personPage";
 
 export const Movie = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ export const Movie = () => {
       dispatch(fetchMovieById(id));
     } else return <SearchResult />;
   }, [dispatch, id]);
+
 
   if (status === "error" && query === null) return <Error />;
   if (status === "loading" && query === null)
@@ -57,10 +59,10 @@ export const Movie = () => {
           overview={movieInfo.movieDescription.overview}
         />
         <Wrapper>
-          <Title title={"Cast"} pageSection={true} />
+          <Title>Cast</Title>
           <List>
-            {movieInfo.movieCrew.cast.slice(0, 20).map((actor) => 
-              <PersonTile
+            {movieInfo.movieCrew.cast.slice(0, 20).map(actor => 
+              <Person
                 id={actor.id}
                 key={`${actor.id}${actor.character}`}
                 name={actor.name}
@@ -71,17 +73,17 @@ export const Movie = () => {
           </List>
         </Wrapper>
         <Wrapper>
-          <Title title={"Crew"} pageSection={true} />
+          <Title>Crew</Title>
           <List>
-            {movieInfo.movieCrew.crew.slice(0, 10).map((person) => (
-              <PersonTile
+            {movieInfo.movieCrew.crew.slice(0, 10).map(person => 
+              <Person
                 key={`${person.id}${person.job}`}
                 name={person.name}
                 profile_path={person.profile_path}
                 role={person.job}
                 id={person.id}
               />
-            ))}
+            )}
           </List>
         </Wrapper>
       </>
