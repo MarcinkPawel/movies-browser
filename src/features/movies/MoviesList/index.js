@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { MovieTile } from "../moviePage";
-import { Header, MoviesContainer, Wrapper, MovieLink } from "./styled";
+import { Header, MoviesContainer, Wrapper } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
@@ -12,6 +12,7 @@ import { useLocation } from "react-router-dom";
 import { fetchSearchMoviesList, selectSearchMoviesStatus } from "../../search/searchSlice";
 import { useQueryParameters } from "../../search/queryParameters";
 import { pageQueryParamName, searchQueryParamName, } from "../../search/queryParamNames"
+import { SearchMovie } from "../../search/searchMovie";
 
 export const Movies = () => {
 
@@ -33,7 +34,7 @@ export const Movies = () => {
   if (statusSearchMovie === "error") return <Error />
   if (status === "loading" && searchQuery === null) return <Loader searchFor={"popular movies"} />
   if (searchQuery !== null && statusSearchMovie === "loading") return <Loader searchFor={searchQuery} />
-  if (searchQuery !== null && statusSearchMovie === "success") return <SearchResult />
+  if (searchQuery !== null && statusSearchMovie === "success") return <SearchMovie />
   if (status === "success" && searchQuery === null)
 
   return (
@@ -41,10 +42,9 @@ export const Movies = () => {
       <Header>Popular movies</Header>
       <MoviesContainer>
       {movieList.results.map(movie => (
-          <MovieLink to={`/movie/${movie.id}`} key={movie.id}>
              <MovieTile 
-              //id={movie.id}
-              //key={`${movie.id}${movie.index}`}
+              id={movie.id}
+              key={`${movie.id}${movie.index}`}
               poster={movie.poster_path}
               title={movie.title}
               date={movie.release_date}
@@ -52,7 +52,6 @@ export const Movies = () => {
               voteCount={movie.vote_count}
               genres={movie.genre_ids}
              />
-          </MovieLink>
            ))}
       </MoviesContainer>
     <Pagination/>

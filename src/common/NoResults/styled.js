@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
   align-items: center;
   max-width: 1368px;
   background: ${({ theme }) => theme.color.mercury};
-  margin: 56px auto 0;
+  margin:auto 0;
   padding: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {

@@ -18,6 +18,7 @@ import { Pagination } from "../../../common/Pagination";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { SearchResult } from "../../../common/SearchResult";
+import { SearchPeople } from "../../search/searchPeople";
 
 export const People = () => {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ export const People = () => {
   if (searchQuery !== null && statusSearchPeople === "loading")
     return <Loader searchFor={searchQuery} />;
   if (searchQuery !== null && statusSearchPeople === "success")
-    return <SearchResult />;
+    return <SearchPeople />;
   if (status === "success" && searchQuery === null) {
     return (
       <>
