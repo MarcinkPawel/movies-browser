@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import { ReactComponent as Vector } from "../../images/Vector.svg"
 
 export const Wrapper = styled.div`
     display: flex;
@@ -14,31 +15,24 @@ export const Wrapper = styled.div`
 `;
 
 export const Button = styled.button`
-     display: flex;
-    padding: 8px 16px;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 400;
+    display: flex;
     align-items: center;
-    border-radius: 5px;
-    color: ${({theme}) => theme.color.woodsmoke};
-    background: ${({theme}) => theme.color.pattensBlue};
-    cursor: pointer;
+    gap: 8px;
+    padding: 8px 16px;
+    background: ${({ theme }) => theme.color.pattensblue};
     border: none;
-    transition: 0.5s;
+    border-radius: 5px;
 
-    &:hover{
-    filter: brightness(0.8);
-    };
+&:hover {
+    filter: brightness(102%);
+    transform: scale(1.04);
+    box-shadow: 3px 3px 3px 3px rgba(189, 195, 199);;
+}
 
-    &:disabled {
-        background: ${({theme}) => theme.color.mystic};
-        cursor: not-allowed;
-    };
-    
-    @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
-        gap: 4px;
-    };
+&:disabled {
+    background-color: ${({ theme }) => theme.color.mystic};
+    color: ${({ theme }) => theme.color.woodsmoke};
+}
 `;
 
 export const ButtonText = styled.span`
@@ -74,29 +68,30 @@ export const Number = styled.p`
         }
 `;
 
-// export const StyledVector = styled(Vector)`
-//   width: 7px;
-//   height: 11px;
-//   color: ${({ theme }) => theme.color.scienceblue};
+export const StyledVector = styled(Vector)`
+  width: 7px;
+  height: 11px;
+  color: ${({ theme }) => theme.color.scienceblue};
 
-//   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-//     width: 5px;
-//     height: 8px;
-//   }
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 5px;
+    height: 8px;
+  }
 
-//     ${({ right }) => right && css`
-//     transform: rotate(180deg);
-//     `}
+    ${({ right }) => right && css`
+    transform: rotate(180deg);
+    `}
 
-//   ${({ mobile }) => mobile && css`
-//     display: none;
+  ${({ mobile }) => mobile && css`
+    display: none;
   
-//     @media (max-width: ${({ theme }) => theme.breakpoint.mobielMax}px) {
-//       display: block;
-//     }
-//   `}
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobielMax}px) {
+      display: block;
+    }
+  `}
 
-//   ${({ disabled }) => disabled && css`
-//     fill: ${({ theme }) => theme.color.waterloo};
-//   `}
-// `;
+  ${({ disabled }) => disabled && css`
+    fill: ${({ theme }) => theme.color.waterloo};
+  `}
+`;
+

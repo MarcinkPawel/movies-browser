@@ -16,7 +16,6 @@ export const theme = {
         scienceblue: "#0044CC",
       },
       breakpoint: {
-        small: 320,
         mobileMin: 576,
         mobileMax: 767,
         tablet: 992,

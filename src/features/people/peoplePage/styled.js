@@ -6,21 +6,24 @@ export const PersonLink = styled(Link)`
 `;
 
 export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   max-width: 1368px;
   margin: 40px auto 0;
-  padding: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     max-width: 320px;
     width: 100%;
     margin: 24px auto;
+    padding: 0 16px;
   }
 `;
 
 export const Header = styled.h1`
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   font-size: 36px;
-  color: ${({ theme }) => theme.color.woodsmoke};
+  color: ${({ theme }) => theme.color.black};
   line-height: 1.2;
   margin-bottom: 24px;
 

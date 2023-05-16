@@ -29,7 +29,7 @@ export default () => (
               <People />
             </Route>
             <Route>
-              <Redirect to="movies?page=1" />
+              <Redirect to="/movies?page=1"/>
             </Route>
           </Switch>
         </HashRouter>

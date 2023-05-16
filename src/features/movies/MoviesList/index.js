@@ -7,41 +7,53 @@ import { Pagination } from "../../../common/Pagination";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { SearchResult } from "../../../common/SearchResult";
-import { fetchPopularMovies, selectPopularMoviesList, selectPopularMoviesStatus } from "../popularMoviesSlice";
+import {
+  fetchPopularMovies,
+  selectPopularMoviesList,
+  selectPopularMoviesStatus,
+} from "../popularMoviesSlice";
 import { useLocation } from "react-router-dom";
-import { fetchSearchMoviesList, selectSearchMoviesStatus } from "../../search/searchSlice";
+import {
+  fetchSearchMoviesList,
+  selectSearchMoviesStatus,
+} from "../../search/searchSlice";
 import { useQueryParameters } from "../../search/queryParameters";
-import { pageQueryParamName, searchQueryParamName, } from "../../search/queryParamNames"
+import {
+  pageQueryParamName,
+  searchQueryParamName,
+} from "../../search/queryParamNames";
+import { SearchMovie } from "../../search/searchMovie";
 
 export const Movies = () => {
-
   const dispatch = useDispatch();
   const status = useSelector(selectPopularMoviesStatus);
   const movieList = useSelector(selectPopularMoviesList);
   const statusSearchMovie = useSelector(selectSearchMoviesStatus);
-  const location = useLocation().pathname
-  const searchQuery = useQueryParameters(searchQueryParamName)
+  const location = useLocation().pathname;
+  const searchQuery = useQueryParameters(searchQueryParamName);
   const page = useQueryParameters(pageQueryParamName);
-  
+
   useEffect(() => {
     if (location.includes("movie") && location.includes(searchQueryParamName))
-      dispatch(fetchSearchMoviesList({query: searchQuery, page: page}));
+      dispatch(fetchSearchMoviesList({ query: searchQuery, page: page }));
     else dispatch(fetchPopularMovies(page));
   }, []);
 
-  if (status === "error") return <Error />
-  if (statusSearchMovie === "error") return <Error />
-  if (status === "loading" && searchQuery === null) return <Loader searchFor={"popular movies"} />
-  if (searchQuery !== null && statusSearchMovie === "loading") return <Loader searchFor={searchQuery} />
-  if (searchQuery !== null && statusSearchMovie === "success") return <SearchResult />
+  if (status === "error") return <Error />;
+  if (statusSearchMovie === "error") return <Error />;
+  if (status === "loading" && searchQuery === null)
+    return <Loader searchFor={"popular movies"} />;
+  if (searchQuery !== null && statusSearchMovie === "loading")
+    return <Loader searchFor={searchQuery} />;
+  if (searchQuery !== null && statusSearchMovie === "success")
+    return <SearchMovie />;
   if (status === "success" && searchQuery === null)
-
-  return (
-    <Wrapper>
-      <Header>Popular movies</Header>
-      <MoviesContainer>
-      {movieList.results.map(movie => (
-             <MovieTile 
+    return (
+      <Wrapper>
+        <Header>Popular movies</Header>
+        <MoviesContainer>
+          {movieList.results.map((movie) => (
+            <MovieTile
               id={movie.id}
               key={`${movie.id}${movie.index}`}
               poster={movie.poster_path}
@@ -50,10 +62,10 @@ export const Movies = () => {
               rate={movie.vote_average.toFixed(1)}
               voteCount={movie.vote_count}
               genres={movie.genre_ids}
-             />
-           ))}
-      </MoviesContainer>
-    <Pagination/>
-    </Wrapper>
-  );
+            />
+          ))}
+        </MoviesContainer>
+        <Pagination page={movieList.page} totalPages={movieList.total_pages} />
+      </Wrapper>
+    );
 };

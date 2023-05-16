@@ -1,45 +1,65 @@
-import React from 'react';
-import { SearchStyled, InputStyled, Magnifier } from "./styled";
-import magnifier from "../../../images/search.svg";
-import { useLocation } from "react-router-dom";
-import {
-  useQueryParameters,
-  useReplaceQueryParameters,
-} from "../../../features/search/queryParameters";
-import {
-  pageQueryParamName,
-  searchQueryParamName,
-} from "../../../features/search/queryParamNames";
-import { Results } from "../Results";
-import { selectOpen } from "../../../features/search/searchSlice";
-import { useSelector } from "react-redux";
+import { InputStyled, SearchStyled, Magnifier,  } from "./styled";
+import { useQueryParameters, useReplaceQueryParameters } from "../../../features/search/queryParameters";
+import { useDispatch } from "react-redux";
+import { fetchSearchMoviesList, fetchSearchPeopleList } from "../../../features/search/searchSlice";
+import { useEffect } from "react";
+import { useLocation } from 'react-router-dom';
+import { fetchMovieById } from "../../../features/movies/moviePage/movieSlice";
+import { fetchPersonById } from "../../../features/people/PersonDetails/personSlice";
+import search from "../../../images/search.svg";
+
 
 export const Search = () => {
-  const location = useLocation();
-  const query = useQueryParameters(searchQueryParamName);
-  const isOpen = useSelector(selectOpen);
+  const dispatch = useDispatch();
   const replaceQueryParameters = useReplaceQueryParameters();
+  const page = useQueryParameters("page");
+  const query = useQueryParameters("search");
+  const { pathname } = useLocation();
+  const id = useQueryParameters("id");
   const onInputChange = ({ target }) => {
-    replaceQueryParameters([
-      {
-        key: searchQueryParamName,
-        value: target.value.trim() !== "" ? target.value : undefined,
-      },
-      { key: pageQueryParamName },
-    ]);
-  };
+    if (target.value === "") {
+      replaceQueryParameters({
+        key: "search",
+        value: "",
+      });
+    }
+    replaceQueryParameters({
+      key: "search",
+      value: query !== "" ? target.value : null,
+    });
+
+    if (pathname.includes("/movie")) {
+      dispatch(fetchSearchMoviesList({ query: target.value.trim(), page: page }));
+    }
+    else if (pathname.includes("id") && pathname.includes("/movie") && pathname.includes("search") === false) {
+      dispatch(fetchMovieById(id));
+    }
+    else if (pathname.includes("id") && pathname.includes("search") === false) {
+      dispatch(fetchPersonById(id));
+    }
+    else dispatch(fetchSearchPeopleList({ query: target.value.trim(), page: page }));
+  }
+
+  useEffect(() => {
+    if (pathname.includes("/movie")) {
+      dispatch(fetchSearchMoviesList({ query: query, page: 1 }));
+    }
+    else dispatch(fetchSearchPeopleList({ query: query, page: 1 }));
+  }, [query]);
 
   return (
     <SearchStyled>
-      <Magnifier src={magnifier} />
-      <InputStyled
-        placeholder={`Search for ${
-          location.pathname.includes("movies") ? "movies..." : "people..."
-        }`}
-        value={query ? query : ""}
-        onChange={onInputChange}
+      <Magnifier src={search} />
+      <InputStyled value={query || ""}
+      onChange={onInputChange}
+      debounceTimeout={500}
+      minLength={2}
+      placeholder={
+        pathname.includes("/movie") ?
+          "Search for movies..." :
+          "Search for people..."
+      }
       />
-      {query && isOpen && <Results query={query} />}
     </SearchStyled>
   );
 };

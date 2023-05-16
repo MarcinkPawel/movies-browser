@@ -1,39 +1,29 @@
 <div align="center">
 
-# Movies Browser 🍿 🎬
+# Movies Browser 🎬
 
-![cinema.png](/cinema.png)
+## Dear All, 🤗
+This is a group project made by:
+- Paweł Marcinkowski 
+- Marta Żebrowska-Giers 
+- Gosia Magdzik <br>
+
+created within YouCode Frontend Developer Course.
+
+You can see progress and current state of our application here:
+[Live demo](https://marcinkpawel.github.io/movies-browser/)
+
+*Please notice that the project is not finished Yet*
+
+We already have done Navigation bar and styling of individual components
 
 </div>
 
-**Movies Browser** is an application created within YouCode programing course as its final project. It is highly responsive site where, by using external API, you have access to huge database of films with their properties and details about actors and crew.
-## Table of content
-
-- [Demo](#demo)
-- [Technologies](#technologies)
-- [Authors](#authors)
-- [External Sources](#external-sources)
-
-## Demo
-
-[Click here](https://marcinkpawel.github.io/movies-browser/)
-
-## Technologies
-
-[![My Skills](https://skillicons.dev/icons?i=html,css,js,react,redux,git,github)](https://skillicons.dev)
-
-
-## Authors
-
-- Paweł Marcinkowski 
-- Marta Żebrowska-Giers 
-- Gosia Magdzik 
-
-## External API Source
-
-[The Movie Database](https://www.themoviedb.org/)
-
-
+We are doing our best to make it better day by day 😊 currently we are working on:
+- API downloading
+- Searching component
+- movie version styling
+- pagination
 
 
 

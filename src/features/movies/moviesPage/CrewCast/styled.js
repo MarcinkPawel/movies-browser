@@ -28,9 +28,10 @@ export const Title = styled.h1`
 
 export const List = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, 208px);
   gap: 24px;
-  margin: 24px auto 40px;
+  margin-bottom: 64px;
+
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: grid;
