@@ -42,9 +42,9 @@ export const PersonDetails = () => {
         {personInfo.personMovies.cast.length === 0 ? null : (
           <>
             <Wrapper>
-              <Title
-                title={`Movies- cast (${personInfo.personMovies.cast.length})`}
-              />
+            <Title>
+              Movies - cast {`(${personInfo.personMovies.cast.length})`}
+            </Title>
               <List>
                 {personInfo.personMovies.cast.map((movie) => (
                   <MovieTile
@@ -66,9 +66,9 @@ export const PersonDetails = () => {
             null :
             <>
             <Wrapper>
-              <Title
-                title={`Movies- crew (${personInfo.personMovies.crew.length})`}
-              />
+            <Title>
+              Movies - crew {`(${personInfo.personMovies.crew.length})`}
+            </Title>
               <List>
                 {personInfo.personMovies.crew.map((movie) => (
                   <MovieTile
