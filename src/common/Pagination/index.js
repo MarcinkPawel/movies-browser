@@ -30,6 +30,7 @@ import {
     const previousPage = page - 1;
     const firstPage = 1;
     const location = useLocation().pathname;
+    
     useEffect(() => {
       replaceQueryParameters({
         key: "page",

@@ -14,21 +14,21 @@ export const Wrapper = styled.div`
 `;
 
 export const Button = styled.button`
-     display: flex;
+    display: flex;
     padding: 8px 16px;
-    gap: 8px;
+    gap: 12px;
     font-size: 14px;
     font-weight: 400;
     align-items: center;
     border-radius: 5px;
-    color: ${({theme}) => theme.color.woodsmoke};
-    background: ${({theme}) => theme.color.pattensBlue};
+    background-color: ${({ theme }) => theme.color.pattensblue} ;
+    color: ${({ theme }) => theme.color.woodsmoke};
     cursor: pointer;
     border: none;
     transition: 0.5s;
 
     &:hover{
-    filter: brightness(0.8);
+        filter: brightness(0.8);
     };
 
     &:disabled {
@@ -37,16 +37,16 @@ export const Button = styled.button`
     };
     
     @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
-        gap: 4px;
+        gap: 8px;
     };
 `;
 
 export const ButtonText = styled.span`
     font-size: 14px;
-    line-height: 19.6px;
+    line-height: 1.4;
     display: block;
      
-    @media (max-width: ${({ theme }) => theme.breakpoint.MobileMax}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
         display: none;
     }
 `;
@@ -56,47 +56,22 @@ export const Text = styled.p`
     line-height: 24px;
     color: ${({ theme }) => theme.color.waterloo};
     align-self: center;
+    font-weight: 400;
 
-    @media (max-width: ${({ theme }) => theme.breakpoint.MobileMax}px) {
-    font-size: 10px;
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 10px;
   }
 `;
 
 export const Number = styled.p`
         color: ${({ theme }) => theme.color.black};
         font-weight: 600;
-        font-size: 10px;
+        font-size: 16px;
         line-height: 24px;
         align-self: center;
 
-        @media (max-width: ${({ theme }) => theme.breakpoint.MobileMax}px) {
+        @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
             font-size: 10px;
         }
 `;
 
-// export const StyledVector = styled(Vector)`
-//   width: 7px;
-//   height: 11px;
-//   color: ${({ theme }) => theme.color.scienceblue};
-
-//   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-//     width: 5px;
-//     height: 8px;
-//   }
-
-//     ${({ right }) => right && css`
-//     transform: rotate(180deg);
-//     `}
-
-//   ${({ mobile }) => mobile && css`
-//     display: none;
-  
-//     @media (max-width: ${({ theme }) => theme.breakpoint.mobielMax}px) {
-//       display: block;
-//     }
-//   `}
-
-//   ${({ disabled }) => disabled && css`
-//     fill: ${({ theme }) => theme.color.waterloo};
-//   `}
-// `;
