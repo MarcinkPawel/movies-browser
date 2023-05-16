@@ -1,18 +1,12 @@
-import { SearchStyled, InputStyled, Magnifier } from "./styled"
-import magnifier from "../../../images/search.svg";
-import { useLocation } from "react-router-dom";
-import { useQueryParameters,
-         useReplaceQueryParameters } from "../../../features/search/queryParameters";
-// import { pageQueryParamName,
-//          searchQueryParamName, } from "../../../features/search/queryParamNames";
-// import { Results } from "../Results";
-// import { selectOpen } from "../../../features/search/searchSlice";
-// import { useSelector } from "react-redux";
+import { InputStyled, SearchStyled, Magnifier,  } from "./styled";
+import { useQueryParameters, useReplaceQueryParameters } from "../../../features/search/queryParameters";
+import { useDispatch } from "react-redux";
+import { fetchSearchMoviesList, fetchSearchPeopleList } from "../../../features/search/searchSlice";
+import { useEffect } from "react";
+import { useLocation } from 'react-router-dom';
 import { fetchMovieById } from "../../../features/movies/moviePage/movieSlice";
 import { fetchPersonById } from "../../../features/people/PersonDetails/personSlice";
-import { fetchSearchMoviesList, fetchSearchPeopleList } from "../../../features/search/searchSlice";
-import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import search from "../../../images/search.svg";
 
 
 export const Search = () => {
@@ -53,22 +47,21 @@ export const Search = () => {
     else dispatch(fetchSearchPeopleList({ query: query, page: 1 }));
   }, [query]);
 
-
-    return (
-        <SearchStyled>
-          <Magnifier src={magnifier} />
-          <InputStyled 
-             value={query || ""}
-             onChange={onInputChange}
-             debounceTimeout={500}
-             minLength={2}
-             placeholder={
-               pathname.includes("/movie") ?
-                 "Search for movies..." :
-                 "Search for people..."
-             } />
-        </SearchStyled>
-    );
+  return (
+    <SearchStyled>
+      <Magnifier src={search} />
+      <InputStyled value={query || ""}
+      onChange={onInputChange}
+      debounceTimeout={500}
+      minLength={2}
+      placeholder={
+        pathname.includes("/movie") ?
+          "Search for movies..." :
+          "Search for people..."
+      }
+      />
+    </SearchStyled>
+  );
 };
 
 //Results Component jest jako test czy to w ogóle się odpali
