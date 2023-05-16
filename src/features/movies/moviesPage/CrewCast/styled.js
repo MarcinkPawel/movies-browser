@@ -28,7 +28,7 @@ export const Title = styled.h1`
 
 export const List = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
   margin: 24px auto 40px;
 
