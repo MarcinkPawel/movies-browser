@@ -1,20 +1,24 @@
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
+const activeClassName = "link-active";
+
 export const StyledLink = styled(Link)`
   text-decoration: none;
   display: flex;
   align-items: center;
 `;
 
-export const StyledNavLink = styled(NavLink)`
+export const StyledNavLink = styled(NavLink).attrs(() => ({
+  activeClassName,
+}))`
   text-decoration: none;
   font-size: 14px;
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   padding: 8px 12px;
   color: ${({ theme }) => theme.color.white};
 
-  &.active {
+  &.${activeClassName} {
     border: 1px solid ${({ theme }) => theme.color.white};
     border-radius: 29px;
   }
