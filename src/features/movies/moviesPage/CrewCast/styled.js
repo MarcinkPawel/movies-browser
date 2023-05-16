@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  //max-width: 1368px;
+  max-width: 1368px;
   margin: 64px auto 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    //max-width: 320px;
+    max-width: 320px;
     width: 100%;
     margin: 24px auto;
     padding: 0 16px;
