@@ -4,4 +4,6 @@ export const Wrapper = styled.div`
 
 `;
 
+export const Title = styled.p`
 
+`;

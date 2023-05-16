@@ -1,5 +1,5 @@
 import React from "react";
-import { Poster, Tile, Title, Year, Details } from "./styled";
+import { Poster, Tile, Title, Year, Details, TileLink } from "./styled";
 import { Rating, Star, Rate, Votes } from "../../../common/Rating";
 import { MovieGenre, MovieType } from "../MovieGenre";
 import Video from "../../../images/Video.svg";
@@ -18,33 +18,35 @@ export const MovieTile = ({
 }) => {
   const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
   return (
-    <Tile to={`/movie/?id=${id}`} key={id} >
-      <Poster
-        src={poster == null ? Video : `${imagesAPI300x450}${poster}`}
-        alt={title}
-      />
-      <Details>
-        <Title>{title}</Title>
-        <Year>{date ? date.slice(0, 4) : null}</Year>
-        <MovieGenre>
-          {genres
-            ? movieGenres.map((genre) => (
-                <MovieType key={genre.id}>{genre.name}</MovieType>
-              ))
-            : null}
-        </MovieGenre>
-        <Rating>
-          {rate !== 0 && voteCount !== 0 ? (
-            <>
-              <Star src={star} />
-              <Rate>{rate ? rate : null}</Rate>
-              <Votes>{voteCount ? `${voteCount} votes` : null} </Votes>
-            </>
-          ) : (
-            <Votes>No votes yet</Votes>
-          )}
-        </Rating>
-      </Details>
-    </Tile>
+    <TileLink to={`/movie/?id=${id}`} key={id}>
+      <Tile>
+        <Poster
+          src={poster == null ? Video : `${imagesAPI300x450}${poster}`}
+          alt={title}
+        />
+        <Details>
+          <Title>{title}</Title>
+          <Year>{date ? date.toString().slice(0, 4) : null}</Year>
+          <MovieGenre>
+            {genres
+              ? movieGenres.map((genre) => (
+                  <MovieType key={genre.id}>{genre.name}</MovieType>
+                ))
+              : null}
+          </MovieGenre>
+          <Rating>
+            {rate !== 0 && voteCount !== 0 ? (
+              <>
+                <Star src={star} />
+                <Rate>{rate ? rate : null}</Rate>
+                <Votes>{voteCount ? `${voteCount} votes` : null} </Votes>
+              </>
+            ) : (
+              <Votes>No votes yet</Votes>
+            )}
+          </Rating>
+        </Details>
+      </Tile>
+    </TileLink>
   );
 };
