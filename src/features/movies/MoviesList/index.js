@@ -6,7 +6,6 @@ import { Header, MoviesContainer, Wrapper } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
-import { SearchResult } from "../../../common/SearchResult";
 import {
   fetchPopularMovies,
   selectPopularMoviesList,
@@ -65,7 +64,10 @@ export const Movies = () => {
             />
           ))}
         </MoviesContainer>
-        <Pagination page={movieList.page} totalPages={movieList.total_pages} />
+        <Pagination
+          page={movieList.page}
+          totalPages={movieList.total_pages}
+        />
       </Wrapper>
     );
 };
