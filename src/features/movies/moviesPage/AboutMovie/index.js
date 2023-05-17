@@ -13,10 +13,9 @@ import {
 } from "./styled";
 import { Rating, Star, Rate, Votes } from "../../../../common/Rating";
 import { MovieGenre, MovieType } from "../../MovieGenre";
-import { imagesAPI600x900, imagesAPIw400 } from "../../../getData";
+import { imagesAPIw400 } from "../../../getData";
 import Video from "../../../../images/Video.svg";
 import star from "../../../../images/star.svg";
-
 
 export const AboutMovie = ({
   aboutMovie,
@@ -30,9 +29,6 @@ export const AboutMovie = ({
   voteCount,
   overview,
 }) => {
-
-  // const movieGenres = Genres.filter((genre) => genres.includes(genre.id));
-
   return (
     <Wrapper>
       <Tile>
@@ -49,14 +45,13 @@ export const AboutMovie = ({
             <Info>{new Date(release).toLocaleDateString()}</Info>
           </Details>
           <MovieGenre gap={aboutMovie}>
-          {genres.map((genre) => (
-          <MovieType key={genre.id}>{genre.name}</MovieType>
-          ))}
+            {genres.map((genre) => (
+              <MovieType key={genre.id}>{genre.name}</MovieType>
+            ))}
           </MovieGenre>
           <Rating>
             <Star src={star} />
-            <Rate>{rate.toFixed(1)}</Rate>
-            / 10
+            <Rate>{rate.toFixed(1)}</Rate>/ 10
             <Votes>{voteCount} votes</Votes>
           </Rating>
         </Content>

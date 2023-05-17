@@ -17,7 +17,6 @@ import { Header, PeopleContainer, Wrapper, PersonLink } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
-import { SearchResult } from "../../../common/SearchResult";
 import { SearchPeople } from "../../search/searchPeople";
 
 export const People = () => {
@@ -62,9 +61,9 @@ export const People = () => {
               </PersonLink>
             ))}
           </PeopleContainer>
-          <Pagination 
-          page={peopleList.page}
-          totalPages={peopleList.total_pages}
+          <Pagination
+            page={peopleList.page}
+            totalPages={peopleList.total_pages}
           />
         </Wrapper>
       </>

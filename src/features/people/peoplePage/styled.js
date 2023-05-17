@@ -8,11 +8,9 @@ export const PersonLink = styled(Link)`
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   max-width: 1368px;
   margin: 40px auto 0;
+  padding: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     max-width: 320px;
@@ -25,7 +23,7 @@ export const Wrapper = styled.div`
 export const Header = styled.h1`
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   font-size: 36px;
-  color: ${({ theme }) => theme.color.black};
+  color: ${({ theme }) => theme.color.woodsmoke};
   line-height: 1.2;
   margin-bottom: 24px;
 
@@ -36,7 +34,7 @@ export const Header = styled.h1`
 `;
 export const PeopleContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(208px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(198px, 1fr));
   grid-template-rows: 1fr;
   gap: 24px;
 

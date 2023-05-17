@@ -2,7 +2,11 @@ import React from "react";
 import { AboutPerson } from "./AboutPerson";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { fetchPersonById, selectPersonInfo, selectPersonStatus } from "./personSlice";
+import {
+  fetchPersonById,
+  selectPersonInfo,
+  selectPersonStatus,
+} from "./personSlice";
 import { useQueryParameters } from "../../search/queryParameters";
 import { selectSearchPeopleStatus } from "../../search/searchSlice";
 import { Error } from "../../../common/Error";
@@ -10,6 +14,7 @@ import { Loader } from "../../../common/Loader";
 import { SearchResult } from "../../../common/SearchResult";
 import { MovieTile } from "../../movies/moviePage";
 import { Wrapper, Title, List } from "../../movies/moviesPage/CrewCast/styled";
+import { SearchPeople } from "../../search/searchPeople";
 
 export const PersonDetails = () => {
   const id = useQueryParameters("id");
@@ -28,7 +33,7 @@ export const PersonDetails = () => {
   if (status === "error" && query === null) return <Error />;
   if (status === "loading" && query === null)
     return <Loader searchFor={"person"} />;
-  if (searchStatus === "success" && query !== null) return <SearchResult />;
+  if (searchStatus === "success" && query !== null) return <SearchPeople />;
   if (status === "success" && query === null)
     return (
       <>
@@ -42,9 +47,9 @@ export const PersonDetails = () => {
         {personInfo.personMovies.cast.length === 0 ? null : (
           <>
             <Wrapper>
-            <Title>
-              Movies - cast {`(${personInfo.personMovies.cast.length})`}
-            </Title>
+              <Title>
+                Movies - cast {`(${personInfo.personMovies.cast.length})`}
+              </Title>
               <List>
                 {personInfo.personMovies.cast.map((movie) => (
                   <MovieTile
@@ -62,13 +67,12 @@ export const PersonDetails = () => {
             </Wrapper>
           </>
         )}
-        {personInfo.personMovies.crew.length === 0 ?
-            null :
-            <>
+        {personInfo.personMovies.crew.length === 0 ? null : (
+          <>
             <Wrapper>
-            <Title>
-              Movies - crew {`(${personInfo.personMovies.crew.length})`}
-            </Title>
+              <Title>
+                Movies - crew {`(${personInfo.personMovies.crew.length})`}
+              </Title>
               <List>
                 {personInfo.personMovies.crew.map((movie) => (
                   <MovieTile
@@ -84,8 +88,8 @@ export const PersonDetails = () => {
                 ))}
               </List>
             </Wrapper>
+          </>
+        )}
       </>
-       }
-       </>
     );
 };

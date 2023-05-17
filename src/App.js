@@ -7,7 +7,6 @@ import { Movies } from "./features/movies/MoviesList";
 import { People } from "./features/people/peoplePage";
 import { PersonDetails } from "./features/people/PersonDetails";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
-import { toMovie, toMovies, toPeople, toPerson } from "./routes";
 import React from 'react';
 
 export default () => (
@@ -35,4 +34,3 @@ export default () => (
         </HashRouter>
     </ThemeProvider>
 )
-
