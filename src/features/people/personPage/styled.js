@@ -7,7 +7,8 @@ export const StyledLink = styled(Link)`
 `;
 
 export const PersonTile = styled.div`
-  width: 208px;
+  height: 339px;
+
   background-color: ${({ theme }) => theme.color.white};
   display: flex;
   flex-direction: column;
@@ -24,6 +25,7 @@ export const PersonTile = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 136px;
+    height: 245px;
   }
 `;
 
