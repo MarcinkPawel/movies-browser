@@ -7,7 +7,8 @@ export const TileLink = styled(Link)`
 
 export const Tile = styled.article`
   background: ${({ theme }) => theme.color.white};
-  width: 324px;
+  width: 100%;
+  height: 100%;
   padding: 16px;
   border-radius: 5px;
   box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.heather};
@@ -65,6 +66,8 @@ export const Year = styled.p`
 `;
 
 export const Details = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
 `;
