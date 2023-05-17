@@ -1,13 +1,18 @@
-import { InputStyled, SearchStyled, Magnifier,  } from "./styled";
-import { useQueryParameters, useReplaceQueryParameters } from "../../../features/search/queryParameters";
+import { InputStyled, SearchStyled, Magnifier } from "./styled";
+import {
+  useQueryParameters,
+  useReplaceQueryParameters,
+} from "../../../features/search/queryParameters";
 import { useDispatch } from "react-redux";
-import { fetchSearchMoviesList, fetchSearchPeopleList } from "../../../features/search/searchSlice";
+import {
+  fetchSearchMoviesList,
+  fetchSearchPeopleList,
+} from "../../../features/search/searchSlice";
 import { useEffect } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { fetchMovieById } from "../../../features/movies/moviePage/movieSlice";
 import { fetchPersonById } from "../../../features/people/PersonDetails/personSlice";
 import search from "../../../images/search.svg";
-
 
 export const Search = () => {
   const dispatch = useDispatch();
@@ -29,36 +34,45 @@ export const Search = () => {
     });
 
     if (pathname.includes("/movie")) {
-      dispatch(fetchSearchMoviesList({ query: target.value.trim(), page: page }));
-    }
-    else if (pathname.includes("id") && pathname.includes("/movie") && pathname.includes("search") === false) {
+      dispatch(
+        fetchSearchMoviesList({ query: target.value.trim(), page: page })
+      );
+    } else if (
+      pathname.includes("id") &&
+      pathname.includes("/movie") &&
+      pathname.includes("search") === false
+    ) {
       dispatch(fetchMovieById(id));
-    }
-    else if (pathname.includes("id") && pathname.includes("search") === false) {
+    } else if (
+      pathname.includes("id") &&
+      pathname.includes("search") === false
+    ) {
       dispatch(fetchPersonById(id));
-    }
-    else dispatch(fetchSearchPeopleList({ query: target.value.trim(), page: page }));
-  }
+    } else
+      dispatch(
+        fetchSearchPeopleList({ query: target.value.trim(), page: page })
+      );
+  };
 
   useEffect(() => {
     if (pathname.includes("/movie")) {
       dispatch(fetchSearchMoviesList({ query: query, page: 1 }));
-    }
-    else dispatch(fetchSearchPeopleList({ query: query, page: 1 }));
+    } else dispatch(fetchSearchPeopleList({ query: query, page: 1 }));
   }, [query]);
 
   return (
     <SearchStyled>
       <Magnifier src={search} />
-      <InputStyled value={query || ""}
-      onChange={onInputChange}
-      debounceTimeout={500}
-      minLength={2}
-      placeholder={
-        pathname.includes("/movie") ?
-          "Search for movies..." :
-          "Search for people..."
-      }
+      <InputStyled
+        value={query || ""}
+        onChange={onInputChange}
+        debounceTimeout={500}
+        minLength={2}
+        placeholder={
+          pathname.includes("/movie")
+            ? "Search for movies..."
+            : "Search for people..."
+        }
       />
     </SearchStyled>
   );

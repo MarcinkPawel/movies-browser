@@ -1,7 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
-const activeClassName = "link-active";
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
@@ -9,19 +8,17 @@ export const StyledLink = styled(Link)`
   align-items: center;
 `;
 
-export const StyledNavLink = styled(NavLink).attrs(() => ({
-  activeClassName,
-}))`
+export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-size: 14px;
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   padding: 8px 12px;
   color: ${({ theme }) => theme.color.white};
 
-  &.${activeClassName} {
+  ${({ activeClass }) => activeClass && css`{
     border: 1px solid ${({ theme }) => theme.color.white};
     border-radius: 29px;
-  }
+  }`}
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
     padding: 8px 12px;
