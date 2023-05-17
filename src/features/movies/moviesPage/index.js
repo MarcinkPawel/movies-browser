@@ -13,8 +13,8 @@ import { BackgroundPoster } from "./BackgroundPoster";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { SearchResult } from "../../../common/SearchResult";
-import { Wrapper, Title, List } from "../../movies/moviesPage/CrewCast/styled";
-
+import { Wrapper, Title } from "../../movies/moviesPage/CrewCast/styled";
+import { List } from "./styled"
 import { Person } from "../../people/personPage";
 
 export const Movie = () => {

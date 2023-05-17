@@ -24,8 +24,8 @@ export const Star = styled.img`
 `;
 
 export const Rate = styled.span`
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 22px;
+  line-height: 1.3;
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   color: ${({ theme }) => theme.color.black};
 
@@ -36,10 +36,10 @@ export const Rate = styled.span`
 `;
 
 export const Votes = styled.span`
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 1.2px;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
-  color: ${({ theme }) => theme.color.waterloo};
+  color: ${({ theme }) => theme.color.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 13px;

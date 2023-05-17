@@ -56,6 +56,7 @@ export const AboutMovie = ({
           <Rating>
             <Star src={star} />
             <Rate>{rate.toFixed(1)}</Rate>
+            / 10
             <Votes>{voteCount} votes</Votes>
           </Rating>
         </Content>
