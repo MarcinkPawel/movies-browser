@@ -53,7 +53,7 @@ export const PersonDetails = () => {
                     poster={movie.poster_path}
                     title={movie.original_title}
                     date={movie.release_date}
-                    rate={movie.vote_average}
+                    rate={movie.vote_average.toFixed(1)}
                     voteCount={movie.vote_count}
                     genres={movie.genre_ids}
                   />
