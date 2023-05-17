@@ -16,6 +16,7 @@ import { SearchResult } from "../../../common/SearchResult";
 import { Wrapper, Title } from "../../movies/moviesPage/CrewCast/styled";
 import { List } from "./styled"
 import { Person } from "../../people/personPage";
+import { SearchMovie } from "../../search/searchMovie"
 
 export const Movie = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ export const Movie = () => {
   if (status === "error" && query === null) return <Error />;
   if (status === "loading" && query === null)
     return <Loader searchFor={"movie"} />;
-  if (searchStatus === "success" && query !== null) return <SearchResult />;
+  if (searchStatus === "success" && query !== null) return <SearchMovie />;
   if (status === "success" && query === null)
     return (
       <>

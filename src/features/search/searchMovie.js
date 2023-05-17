@@ -3,7 +3,7 @@ import { Pagination } from "../../common/Pagination";
 import { selectMovies } from "./searchSlice";
 import { MovieTile } from "../movies/moviePage";
 import { useQueryParameters } from "./queryParameters";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { fetchMovieById } from "../movies/moviePage/movieSlice";
 import { useHistory } from "react-router-dom";
 import { NoResults } from "../../common/NoResults";
@@ -14,6 +14,7 @@ export const SearchMovie = () => {
   const id = useQueryParameters("id");
   const dispatch = useDispatch();
   const history = useHistory();
+  const [typingTimer, setTypingTimer] = useState(null);
 
   useEffect(() => {
     const reload = () => {
@@ -30,9 +31,15 @@ export const SearchMovie = () => {
 
   const { page, results, total_pages, total_results } =
     useSelector(selectMovies);
+
   useEffect(() => {
     if (id && searchParams === null) {
       dispatch(fetchMovieById(id));
+    } else {
+      clearTimeout(typingTimer);
+      if (searchParams !== null) {
+        setTypingTimer(setTimeout(() => {}, 2000));
+      }
     }
   }, [searchParams, id]);
 
