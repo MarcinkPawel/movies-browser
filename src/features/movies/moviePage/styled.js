@@ -12,6 +12,8 @@ export const Tile = styled.article`
   padding: 16px;
   border-radius: 5px;
   box-shadow: 0px 4px 12px 0px ${({ theme }) => theme.color.heather};
+  display: grid;
+  grid-template-rows: auto 1fr;
 
   &:hover {
     cursor: pointer;
@@ -68,6 +70,12 @@ export const Year = styled.p`
 export const Details = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
+
+`;
+
+export const DetailsBlock = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
 `;
