@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 export const PersonLink = styled(Link)`
   text-decoration: none;
+  width: 100%;
+  height: 100%;
 `;
 
 export const Wrapper = styled.div`
