@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Rating = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   gap: 12px;
   padding: 16px 0 0 0;
   max-width: 250px;
   line-height: 24px;
-  justify-content: flex-end;
 
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
