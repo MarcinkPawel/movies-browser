@@ -7,7 +7,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const PersonTile = styled.div`
-  height: 339px;
+  min-height: 339px;
 
   background-color: ${({ theme }) => theme.color.white};
   display: flex;
