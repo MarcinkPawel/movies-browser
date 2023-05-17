@@ -1,5 +1,5 @@
 import React from "react";
-import { Poster, Tile, Title, Year, Details, TileLink } from "./styled";
+import { Poster, Tile, Title, Year, Details, TileLink, DetailsBlock } from "./styled";
 import { Rating, Star, Rate, Votes } from "../../../common/Rating";
 import { MovieGenre, MovieType } from "../MovieGenre";
 import Video from "../../../images/Video.svg";
@@ -25,15 +25,17 @@ export const MovieTile = ({
           alt={title}
         />
         <Details>
-          <Title>{title}</Title>
-          <Year>{date ? date.toString().slice(0, 4) : null}</Year>
-          <MovieGenre>
-            {genres
-              ? movieGenres.map((genre) => (
-                  <MovieType key={genre.id}>{genre.name}</MovieType>
-                ))
-              : null}
-          </MovieGenre>
+          <DetailsBlock>
+            <Title>{title}</Title>
+            <Year>{date ? date.toString().slice(0, 4) : null}</Year>
+            <MovieGenre>
+              {genres
+                ? movieGenres.map((genre) => (
+                    <MovieType key={genre.id}>{genre.name}</MovieType>
+                  ))
+                : null}
+            </MovieGenre>
+          </DetailsBlock>
           <Rating>
             {rate !== 0 && voteCount !== 0 ? (
               <>

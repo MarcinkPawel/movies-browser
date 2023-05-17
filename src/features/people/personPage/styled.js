@@ -7,8 +7,7 @@ export const StyledLink = styled(Link)`
 `;
 
 export const PersonTile = styled.div`
-  width: 100%;
-  height: 100%;
+  min-height: 339px;
   background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
   box-shadow: 0px 4px 12px ${({ theme }) => theme.color.heather};
@@ -22,6 +21,7 @@ export const PersonTile = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 136px;
+    height: 245px;
   }
 `;
 
