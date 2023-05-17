@@ -47,10 +47,15 @@ export const Wrapper = styled.nav`
     padding: 16px;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
     margin: 0;
     width: 100%;
     background: ${({ theme }) => theme.color.black};
+    padding: 12px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
+    width: 100%;
     padding: 12px;
   }
 `;
