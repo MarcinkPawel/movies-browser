@@ -42,6 +42,10 @@ export const Magnifier = styled.img`
 export const InputStyled = styled.input`
     border: none;
 
+    @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    max-width: 140px;
+  }  
+
   &:focus {
     outline: none;
   }
