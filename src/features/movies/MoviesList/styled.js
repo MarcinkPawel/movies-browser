@@ -34,15 +34,11 @@ export const Header = styled.h1`
 `;
 export const MoviesContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
   grid-template-rows: 1fr;
   gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
+    grid-template-columns: minmax(200px, 1fr);
   }
 `;
