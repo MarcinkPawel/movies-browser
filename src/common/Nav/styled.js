@@ -20,7 +20,7 @@ export const StyledNavLink = styled(NavLink)`
     border-radius: 45px;
   };
 
-  ${({ activeClass }) => activeClass && css`{
+  ${({ activeclass }) => activeclass && css`{
     border: 1px solid ${({ theme }) => theme.color.white};
     border-radius: 29px;
   }`}
