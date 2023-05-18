@@ -6,9 +6,6 @@ export const MovieLink = styled(Link)`
 `;
 
 export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: 40px auto 0;
   padding: 16px;
   max-width: 1368px;
@@ -35,10 +32,17 @@ export const Header = styled.h1`
 export const MoviesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(316px, 1fr));
-  grid-template-rows: 1fr;
   gap: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
+    grid-template-columns: minmax(200px, 1fr);
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
     grid-template-columns: minmax(200px, 1fr);
   }
 `;
