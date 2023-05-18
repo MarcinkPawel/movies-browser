@@ -28,8 +28,12 @@ export const AboutPerson = ({
         <Details>
           <Label>Date of birth:</Label>
           <Info>{new Date(birthday).toLocaleDateString()}</Info>
-          <Label>Place of birth</Label>
-          <Info>{birthplace}</Info>
+          {birthplace ? (
+            <>
+              <Label>Place of birth</Label>
+              <Info> {birthplace} </Info>{" "}
+            </>
+          ) : null};
         </Details>
       </Content>
       <Description>{biography}</Description>
