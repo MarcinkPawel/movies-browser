@@ -7,6 +7,8 @@ export const StyledLink = styled(Link)`
 `;
 
 export const PersonTile = styled.div`
+  display: flex;
+  flex-direction: column;
   min-height: 339px;
   background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
