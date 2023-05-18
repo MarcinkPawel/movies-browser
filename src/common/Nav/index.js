@@ -14,7 +14,7 @@ import video from "../../images/Video.svg";
 
 export const Nav = () => {
   const location = useLocation().pathname
-  const activClass = "true";
+  const activeClass = "true";
 
   return (
     <Wrapper>
@@ -28,10 +28,10 @@ export const Nav = () => {
           </StyledLink>
           <List>
             <li>
-              <StyledNavLink to={"/movies"} activeClass={location.includes("/movie") ? activClass : null}>MOVIES</StyledNavLink>
+              <StyledNavLink to={"/movies"} activeClass={location.includes("/movie") ? activeClass : null}>MOVIES</StyledNavLink>
             </li>
             <li>
-              <StyledNavLink to={"/people"} activeClass={location.includes("/person") ? activClass : null}>PEOPLE</StyledNavLink>
+              <StyledNavLink to={"/people"} activeClass={location.includes("/person") ? activeClass : null}>PEOPLE</StyledNavLink>
             </li>
           </List>
         </Section>

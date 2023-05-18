@@ -46,6 +46,7 @@ grid-area: 1 / 1 / 3 / 2;
 
 export const Content = styled.div`
 grid-area: 1 / 2 / 2 / 3;
+width: fit-content;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-area: 1 / 2 / 2 / 3;
