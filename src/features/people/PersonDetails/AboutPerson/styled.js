@@ -3,6 +3,10 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin: 23px 14px 0 14px;
+  }
 `;
 
 export const Tile = styled.article`
@@ -21,6 +25,7 @@ export const Tile = styled.article`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     gap: 0 16px;
     padding: 16px;
+    margin-top: 0;
     grid-template-columns:  minmax(auto, 114px) 1fr;
   }
 `;
