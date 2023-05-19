@@ -23,9 +23,8 @@ export const Star = styled.img`
 `;
 
 export const Rate = styled.span`
-  
   font-size: 16px;
-  line-height: 1.3;
+  line-height: 1.5;
   font-weight: ${({ theme }) => theme.fontWeight.semiBold};
   color: ${({ theme }) => theme.color.black};
 
@@ -45,4 +44,9 @@ export const Votes = styled.span`
     font-size: 13px;
     line-height: 1.3;
   }
+`;
+export const RateContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
 `;

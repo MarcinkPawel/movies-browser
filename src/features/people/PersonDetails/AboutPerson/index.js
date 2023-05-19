@@ -38,7 +38,7 @@ export const AboutPerson = ({
                 <Label constant>Place of birth:</Label>
                 <Info> {birthplace} </Info>{" "}
               </>
-            ) : null};
+            ) : null}
           </DetailsLine>
         </Details>
       </Content>
