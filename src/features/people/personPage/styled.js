@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledLink = styled(Link)`
-    text-decoration: none;
-    display: flex;
+  text-decoration: none;
+  display: flex;
 `;
 
 export const PersonTile = styled.div`
@@ -19,17 +19,19 @@ export const PersonTile = styled.div`
   &:hover {
     cursor: pointer;
     transform: scale(1.05, 1.05);
-    transition:  1s ease-out 0s;
+    transition: 1s ease-out 0s;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     width: 100%;
     height: auto;
+    padding: 8px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 136px;
     height: 245px;
+    padding: 8px;
   }
 `;
 
@@ -40,7 +42,6 @@ export const PersonImage = styled.img`
   aspect-ratio: 2/3;
   object-fit: cover;
   background-size: 30%;
-
 
   &.no-picture {
     object-fit: cover;
@@ -54,7 +55,7 @@ export const FullName = styled.h2`
   text-align: center;
   padding: 12px 0 8px 0;
   color: ${({ theme }) => theme.color.woodsmoke};
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: 16px;
     line-height: 24px;
@@ -72,7 +73,7 @@ export const FunctionName = styled.span`
   line-height: 27px;
   text-align: center;
   color: ${({ theme }) => theme.color.waterloo};
- 
+
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     font-size: 15px;
     line-height: 22px;

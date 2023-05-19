@@ -177,7 +177,7 @@ export const Votes = styled.span`
   font-size: 16px;
   line-height: 1.5;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
-  color: ${({ theme }) => theme.color.waterloo};
+  color: ${({ theme }) => theme.color.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 13px;
