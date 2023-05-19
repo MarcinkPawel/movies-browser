@@ -2,7 +2,7 @@ import React from "react";
 import { Poster, Tile, Title, Year, Details, TileLink, DetailsBlock } from "./styled";
 import { Rating, Star, Rate, Votes } from "../../../common/Rating";
 import { MovieGenre, MovieType } from "../MovieGenre";
-import Video from "../../../images/Video.svg";
+import noMovieImage from "../../../images/noMovieImage.svg";
 import star from "../../../images/star.svg";
 import { imagesAPI300x450 } from "../../getData";
 import { Genres } from "../MovieGenre/genresList";
@@ -21,7 +21,7 @@ export const MovieTile = ({
     <TileLink to={`/movie/?id=${id}`} key={id}>
       <Tile>
         <Poster
-          src={poster == null ? Video : `${imagesAPI300x450}${poster}`}
+          src={poster == null ? noMovieImage : `${imagesAPI300x450}${poster}`}
           alt={title}
         />
         <Details>
