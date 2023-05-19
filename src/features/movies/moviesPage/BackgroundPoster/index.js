@@ -1,6 +1,6 @@
 import React from "react";
-import { Rating, Star } from "../../../../common/Rating";
-import { Wrapper, PosterSpace, Poster, Section, Title, RateStyledA, RateStyledB, Votes } from "./styled";
+import { Rating } from "../../../../common/Rating";
+import { Wrapper, PosterSpace, Poster, Section, Title, RateStyledA, RateStyledB, Votes, Star } from "./styled";
 import star from "../../../../images/star.svg";
 import { imagesFullApi } from "../../../getData";
 

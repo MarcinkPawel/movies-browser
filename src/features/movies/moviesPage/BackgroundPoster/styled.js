@@ -112,5 +112,12 @@ export const Votes = styled.p`
       line-height: 12px;
 
   }
+`;
 
+export const Star = styled.img`
+  width: 40px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    width: 16px;
+  }
 `;

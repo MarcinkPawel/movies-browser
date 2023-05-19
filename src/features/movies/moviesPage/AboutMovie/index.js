@@ -10,8 +10,13 @@ import {
   Label,
   Info,
   Wrapper,
+  DetailsLine,
+  Star,
+  Rate,
+  Votes,
+  TotalRate,
 } from "./styled";
-import { Rating, Star, Rate, Votes } from "../../../../common/Rating";
+import { Rating } from "../../../../common/Rating";
 import { MovieGenre, MovieType } from "../../MovieGenre";
 import { imagesAPIw400 } from "../../../getData";
 import Video from "../../../../images/Video.svg";
@@ -37,12 +42,16 @@ export const AboutMovie = ({
           <Title>{title}</Title>
           <Year>{date ? date.toString().slice(0, 4) : null}</Year>
           <Details>
-            <Label>Production:</Label>
-            <Info>
-              {productionCountry.map((country) => country.name).join(", ")}
-            </Info>
-            <Label>Release date:</Label>
-            <Info>{new Date(release).toLocaleDateString()}</Info>
+            <DetailsLine>
+              <Label>Production:</Label>
+              <Info>
+                {productionCountry.map((country) => country.name).join(", ")}
+              </Info>
+            </DetailsLine>
+            <DetailsLine>
+              <Label>Release date:</Label>
+              <Info>{new Date(release).toLocaleDateString()}</Info>
+            </DetailsLine>
           </Details>
           <MovieGenre gap={aboutMovie}>
             {genres.map((genre) => (
@@ -51,7 +60,8 @@ export const AboutMovie = ({
           </MovieGenre>
           <Rating>
             <Star src={star} />
-            <Rate>{rate.toFixed(1)}</Rate>/ 10
+            <Rate>{rate.toFixed(1)}</Rate>
+            <TotalRate> / 10</TotalRate>
             <Votes>{voteCount} votes</Votes>
           </Rating>
         </Content>
