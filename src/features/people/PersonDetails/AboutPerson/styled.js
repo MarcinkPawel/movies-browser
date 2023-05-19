@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -85,11 +85,24 @@ export const Label = styled.p`
   color: ${({ theme }) => theme.color.stormGray};
   line-height: 1.2;
   margin-bottom: 8px;
+  margin-right: 11px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    font-size: 12px;
-    line-height: 14px;
+    display: none;
   }
+
+  ${({ constant }) => constant && css`
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+      display: block;
+      font-size: 12px;
+    }
+  `}
+
+  ${({ disappear }) => disappear && css`
+    display: none;
+  `}
+
+
 `;
 
 export const Info = styled.span`
@@ -117,4 +130,9 @@ export const Description = styled.div`
     margin: 16px 0 0 0;
     grid-area: 2 / 1 / 3 / 3;
   }
+`;
+
+export const DetailsLine = styled.p`
+  display: flex;
+  flex-direction: row;
 `;
