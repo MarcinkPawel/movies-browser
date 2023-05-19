@@ -9,7 +9,7 @@ export const StyledLink = styled(Link)`
 export const PersonTile = styled.div`
   display: flex;
   flex-direction: column;
-  height: 380px;
+  height: 405px;
   width: 208px;
   background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
