@@ -9,7 +9,8 @@ export const StyledLink = styled(Link)`
 export const PersonTile = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 339px;
+  height: 339px;
+  width: 208px;
   background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
   box-shadow: 0px 4px 12px ${({ theme }) => theme.color.heather};
@@ -21,6 +22,11 @@ export const PersonTile = styled.div`
     transition:  1s ease-out 0s;
   }
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    width: 100%;
+    height: auto;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 136px;
     height: 245px;
@@ -29,11 +35,12 @@ export const PersonTile = styled.div`
 
 export const PersonImage = styled.img`
   width: 100%;
-  height: auto;
   background-color: ${({ theme }) => theme.color.silver};
   border-radius: 5px;
   aspect-ratio: 2/3;
   object-fit: cover;
+  background-size: 30%;
+
 
   &.no-picture {
     object-fit: cover;
@@ -48,7 +55,11 @@ export const FullName = styled.h2`
   padding: 12px 0 8px 0;
   color: ${({ theme }) => theme.color.woodsmoke};
   
-  
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 14px;
     line-height: 18px;
@@ -62,6 +73,11 @@ export const FunctionName = styled.span`
   text-align: center;
   color: ${({ theme }) => theme.color.waterloo};
  
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 15px;
+    line-height: 22px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 14px;
     line-height: 18px;
