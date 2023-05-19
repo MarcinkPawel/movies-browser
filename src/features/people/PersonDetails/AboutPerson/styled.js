@@ -3,6 +3,8 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
+  margin: 23px 14px 0 14px;
+
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin: 23px 14px 0 14px;
