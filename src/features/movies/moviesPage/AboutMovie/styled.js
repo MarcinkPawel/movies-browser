@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
 
 export const Tile = styled.article`
     display: grid;
+    margin: 14px;
     grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
     justify-content: center;
     grid-column-gap: 0px;
