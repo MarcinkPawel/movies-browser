@@ -1,6 +1,6 @@
 import { all } from "redux-saga/effects";
 import { popularMoviesSaga } from "./features/movies/popularMoviesSaga";
-import { movieSaga } from "./features/movies/moviePage/movieSaga";
+import { movieSaga } from "./features/movies/MovieTile/movieSaga";
 import { searchSaga } from "./features/search/searchSaga";
 import { popularPeopleSaga } from "./features/people/popularPeopleSaga";
 import { personSaga } from "./features/people//PersonDetails/personSaga";

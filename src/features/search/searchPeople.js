@@ -10,7 +10,7 @@ import {
   PeopleContainer,
   PersonLink,
   Wrapper,
-} from "../people/peoplePage/styled";
+} from "../people/PeopleList/styled";
 import { Person } from "../people/personPage";
 import { NoResults } from "../../common/NoResults";
 
