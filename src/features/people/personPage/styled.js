@@ -3,14 +3,11 @@ import { Link } from "react-router-dom";
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  display: flex;
 `;
 
 export const PersonTile = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 405px;
-  width: 208px;
+  width: 100%;
+  height: 100%;
   background-color: ${({ theme }) => theme.color.white};
   padding: 16px;
   box-shadow: 0px 4px 12px ${({ theme }) => theme.color.heather};
@@ -24,13 +21,11 @@ export const PersonTile = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     width: 100%;
-    height: auto;
+    height: 100%;
     padding: 8px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    width: 136px;
-    height: 245px;
     padding: 8px;
   }
 `;
@@ -46,6 +41,13 @@ export const PersonImage = styled.img`
   &.no-picture {
     object-fit: cover;
   }
+`;
+
+export const PersonDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
 `;
 
 export const FullName = styled.h2`
@@ -67,7 +69,7 @@ export const FullName = styled.h2`
   }
 `;
 
-export const FunctionName = styled.span`
+export const FunctionName = styled.p`
   font-size: 18px;
   font-weight: ${({ theme }) => theme.fontWeight.regular};
   line-height: 27px;
