@@ -67,7 +67,6 @@ export const Details = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 `;
 
 export const DetailsBlock = styled.div`

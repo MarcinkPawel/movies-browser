@@ -11,14 +11,13 @@ import {
   PersonLink,
   Wrapper,
 } from "../people/PeopleList/styled";
-import { Person } from "../people/personPage";
+import { Person } from "../people/PersonTile";
 import { NoResults } from "../../common/NoResults";
 
 export const SearchPeople = () => {
   const { page, results, total_pages, total_results } =
     useSelector(selectSearchPeople);
   const searchParams = useQueryParameters("search");
-  const history = useHistory();
   const id = useQueryParameters("id");
   const dispatch = useDispatch();
 

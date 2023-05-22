@@ -20,7 +20,6 @@ export const Wrapper = styled.div`
     width: 100%;
     margin: 24px auto 0 auto;
     padding: 7px;
-
   }
 `;
 

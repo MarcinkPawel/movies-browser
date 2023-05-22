@@ -1,7 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { MovieTile } from "../moviePage";
+import { useLocation } from "react-router-dom";
+import { MovieTile } from "../MovieTile";
 import { Header, MoviesContainer, Wrapper } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { Error } from "../../../common/Error";
@@ -11,7 +12,6 @@ import {
   selectPopularMoviesList,
   selectPopularMoviesStatus,
 } from "../MoviesSaga/popularMoviesSlice";
-import { useLocation } from "react-router-dom";
 import {
   fetchSearchMoviesList,
   selectSearchMoviesStatus,
@@ -64,10 +64,7 @@ export const Movies = () => {
             />
           ))}
         </MoviesContainer>
-        <Pagination
-          page={movieList.page}
-          totalPages={movieList.total_pages}
-        />
+        <Pagination page={movieList.page} totalPages={movieList.total_pages} />
       </Wrapper>
     );
 };

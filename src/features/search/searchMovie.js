@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Pagination } from "../../common/Pagination";
 import { selectMovies } from "./searchSlice";
-import { MovieTile } from "../movies/moviePage";
+import { MovieTile } from "../movies/MovieTile";
 import { useQueryParameters } from "./queryParameters";
 import { useEffect, useState } from "react";
 import { fetchMovieById } from "../movies/MoviesSaga/movieSlice";

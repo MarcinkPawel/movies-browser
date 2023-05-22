@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 import { useQueryParameters } from "../../search/queryParameters";
 import {
   fetchMovieById,
@@ -7,16 +8,15 @@ import {
   selectMovieStatus,
 } from "../MoviesSaga/movieSlice";
 import { selectSearchMoviesStatus } from "../../search/searchSlice";
-import { useEffect } from "react";
 import { AboutMovie } from "./AboutMovie";
 import { BackgroundPoster } from "./BackgroundPoster";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { SearchResult } from "../../../common/SearchResult";
 import { Wrapper, Title } from "../../movies/moviesPage/CrewCast/styled";
-import { List } from "./styled"
-import { Person } from "../../people/personPage";
-import { SearchMovie } from "../../search/searchMovie"
+import { List } from "./styled";
+import { Person } from "../../people/PersonTile";
+import { SearchMovie } from "../../search/searchMovie";
 
 export const Movie = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,6 @@ export const Movie = () => {
       dispatch(fetchMovieById(id));
     } else return <SearchResult />;
   }, [dispatch, id]);
-
 
   if (status === "error" && query === null) return <Error />;
   if (status === "loading" && query === null)
@@ -62,7 +61,7 @@ export const Movie = () => {
         <Wrapper>
           <Title>Cast</Title>
           <List>
-            {movieInfo.movieCrew.cast.slice(0, 20).map(actor => 
+            {movieInfo.movieCrew.cast.slice(0, 20).map((actor) => (
               <Person
                 id={actor.id}
                 key={`${actor.id}${actor.character}`}
@@ -70,13 +69,13 @@ export const Movie = () => {
                 profile_path={actor.profile_path}
                 role={actor.character}
               />
-            )}
+            ))}
           </List>
         </Wrapper>
         <Wrapper>
           <Title>Crew</Title>
           <List>
-            {movieInfo.movieCrew.crew.slice(0, 10).map(person => 
+            {movieInfo.movieCrew.crew.slice(0, 10).map((person) => (
               <Person
                 key={`${person.id}${person.job}`}
                 name={person.name}
@@ -84,7 +83,7 @@ export const Movie = () => {
                 role={person.job}
                 id={person.id}
               />
-            )}
+            ))}
           </List>
         </Wrapper>
       </>

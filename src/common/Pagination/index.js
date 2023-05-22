@@ -1,25 +1,19 @@
-import {
-  Wrapper,
-  Text,
-  Number,
-  Button,
-  ButtonText,
-} from "./styled";
-import { BackArrow, ForArrow } from "./arrowsForBack";
 import React from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { fetchPopularPeople } from "../../features/people/PeopleSaga/popularPeopleSlice";
 import { fetchPopularMovies } from "../../features/movies/MoviesSaga/popularMoviesSlice";
-import { useEffect } from "react";
 import {
   useQueryParameters,
   useReplaceQueryParameters,
 } from "../../features/search/queryParameters";
+import { BackArrow, ForArrow } from "./arrowsForBack";
 import {
   fetchSearchMoviesList,
   fetchSearchPeopleList,
 } from "../../features/search/searchSlice";
-import { useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Wrapper, Text, Number, Button, ButtonText } from "./styled";
 
 export const Pagination = ({ page, totalPages }) => {
   const replaceQueryParameters = useReplaceQueryParameters();
@@ -30,7 +24,7 @@ export const Pagination = ({ page, totalPages }) => {
   const previousPage = page - 1;
   const firstPage = 1;
   const location = useLocation().pathname;
-  
+
   useEffect(() => {
     replaceQueryParameters({
       key: "page",

@@ -31,9 +31,9 @@ export const List = styled.div`
   margin: 24px 14px 40px 14px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {

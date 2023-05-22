@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { useQueryParameters } from "../../search/queryParameters";
 import {
   fetchSearchPeopleList,
@@ -11,7 +12,6 @@ import {
   selectPopularPeopleList,
   selectPopularPeopleStatus,
 } from "../PeopleSaga/popularPeopleSlice";
-import { useLocation } from "react-router-dom";
 import { Person } from "../PersonTile";
 import { Header, PeopleContainer, Wrapper, PersonLink } from "./styled";
 import { Pagination } from "../../../common/Pagination";

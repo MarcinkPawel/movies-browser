@@ -12,7 +12,7 @@ import { selectSearchPeopleStatus } from "../../search/searchSlice";
 import { Error } from "../../../common/Error";
 import { Loader } from "../../../common/Loader";
 import { SearchResult } from "../../../common/SearchResult";
-import { MovieTile } from "../../movies/moviePage";
+import { MovieTile } from "../../movies/MovieTile";
 import { Wrapper, Title, List } from "../../movies/moviesPage/CrewCast/styled";
 import { SearchPeople } from "../../search/searchPeople";
 

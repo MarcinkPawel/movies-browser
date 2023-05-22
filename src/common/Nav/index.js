@@ -13,7 +13,7 @@ import { Search } from "./SearchInput";
 import video from "../../images/Video.svg";
 
 export const Nav = () => {
-  const location = useLocation().pathname
+  const location = useLocation().pathname;
   const activeclass = "true";
 
   return (
@@ -28,10 +28,20 @@ export const Nav = () => {
           </StyledLink>
           <List>
             <li>
-              <StyledNavLink to={"/movies"} activeclass={location.includes("/movie") ? activeclass : null}>MOVIES</StyledNavLink>
+              <StyledNavLink
+                to={"/movies"}
+                activeclass={location.includes("/movie") ? activeclass : null}
+              >
+                MOVIES
+              </StyledNavLink>
             </li>
             <li>
-              <StyledNavLink to={"/people"} activeclass={location.includes("/person") ? activeclass : null}>PEOPLE</StyledNavLink>
+              <StyledNavLink
+                to={"/people"}
+                activeclass={location.includes("/person") ? activeclass : null}
+              >
+                PEOPLE
+              </StyledNavLink>
             </li>
           </List>
         </Section>

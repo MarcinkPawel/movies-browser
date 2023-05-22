@@ -77,5 +77,3 @@ export const Search = () => {
     </SearchStyled>
   );
 };
-
-//Results Component jest jako test czy to w ogóle się odpali

@@ -1,5 +1,13 @@
 import React from "react";
-import { Poster, Tile, Title, Year, Details, TileLink, DetailsBlock } from "./styled";
+import {
+  Poster,
+  Tile,
+  Title,
+  Year,
+  Details,
+  TileLink,
+  DetailsBlock,
+} from "./styled";
 import { Rating, Star, Rate, Votes } from "../../../common/Rating";
 import { MovieGenre, MovieType } from "../MovieGenre";
 import noMovieImage from "../../../images/noMovieImage.svg";

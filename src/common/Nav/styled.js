@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 
-
 export const StyledLink = styled(Link)`
   text-decoration: none;
   display: flex;
@@ -15,15 +14,19 @@ export const StyledNavLink = styled(NavLink)`
   padding: 8px 12px;
   color: ${({ theme }) => theme.color.white};
 
-  &.active {     
+  &.active {
     border: 1px solid white;
     border-radius: 45px;
-  };
+  }
 
-  ${({ activeclass }) => activeclass && css`{
-    border: 1px solid ${({ theme }) => theme.color.white};
-    border-radius: 29px;
-  }`}
+  ${({ activeclass }) =>
+    activeclass &&
+    css`
+       {
+        border: 1px solid ${({ theme }) => theme.color.white};
+        border-radius: 29px;
+      }
+    `}
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMin}px) {
     padding: 8px 12px;
@@ -32,7 +35,7 @@ export const StyledNavLink = styled(NavLink)`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.small}px) {
-    padding: 8px ;
+    padding: 8px;
     font-size: 12px;
     gap: 12px;
   }
@@ -141,7 +144,6 @@ export const List = styled.li`
     margin-left: 19px;
   }
 `;
-
 
 export const Section = styled.div`
   display: flex;
