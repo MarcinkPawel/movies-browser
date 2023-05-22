@@ -2,7 +2,7 @@
 
 # Movies Browser 🍿 🎬
 
-![cinema.png](/cinema.png)
+![cinema.png](./public/cinema.png)
 
 </div>
 
