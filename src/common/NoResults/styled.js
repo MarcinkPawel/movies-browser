@@ -1,17 +1,26 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
+  max-width: 1368px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: ${({ theme }) => theme.color.mercury};
-  margin:auto 0;
+  margin: 56px auto 0 auto;
   padding: 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    max-width: 500px;
+    width: 100%;
+    margin: 44px auto 0 auto;
+    padding: 10px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     max-width: 320px;
     width: 100%;
-    margin: 24px auto;
+    margin: 24px auto 0 auto;
+    padding: 7px;
+
   }
 `;
 
@@ -21,13 +30,18 @@ export const Header = styled.h1`
   font-size: 36px;
   color: ${({ theme }) => theme.color.black};
   line-height: 1.2;
-  margin-bottom: 24px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 18px;
     margin-bottom: 12px;
   }
 `;
+
 export const ErrorPicture = styled.img`
   width: 60%;
 
