@@ -7,8 +7,8 @@ import {
 } from "./styled";
 import { BackArrow, ForArrow } from "./arrowsForBack";
 import React from "react";
-import { fetchPopularPeople } from "../../features/people/popularPeopleSlice";
-import { fetchPopularMovies } from "../../features/movies/popularMoviesSlice";
+import { fetchPopularPeople } from "../../features/people/PeopleSaga/popularPeopleSlice";
+import { fetchPopularMovies } from "../../features/movies/MoviesSaga/popularMoviesSlice";
 import { useEffect } from "react";
 import {
   useQueryParameters,

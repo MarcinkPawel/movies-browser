@@ -4,7 +4,7 @@ import { selectMovies } from "./searchSlice";
 import { MovieTile } from "../movies/moviePage";
 import { useQueryParameters } from "./queryParameters";
 import { useEffect, useState } from "react";
-import { fetchMovieById } from "../movies/MovieTile/movieSlice";
+import { fetchMovieById } from "../movies/MoviesSaga/movieSlice";
 import { useHistory } from "react-router-dom";
 import { NoResults } from "../../common/NoResults";
 import { Wrapper, Header, MoviesContainer } from "../movies/MoviesList/styled";

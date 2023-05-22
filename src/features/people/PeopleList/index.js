@@ -10,9 +10,9 @@ import {
   fetchPopularPeople,
   selectPopularPeopleList,
   selectPopularPeopleStatus,
-} from "../popularPeopleSlice";
+} from "../PeopleSaga/popularPeopleSlice";
 import { useLocation } from "react-router-dom";
-import { Person } from "../personPage";
+import { Person } from "../PersonTile";
 import { Header, PeopleContainer, Wrapper, PersonLink } from "./styled";
 import { Pagination } from "../../../common/Pagination";
 import { Error } from "../../../common/Error";

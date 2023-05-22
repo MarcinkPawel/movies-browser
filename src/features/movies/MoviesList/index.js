@@ -10,7 +10,7 @@ import {
   fetchPopularMovies,
   selectPopularMoviesList,
   selectPopularMoviesStatus,
-} from "../popularMoviesSlice";
+} from "../MoviesSaga/popularMoviesSlice";
 import { useLocation } from "react-router-dom";
 import {
   fetchSearchMoviesList,

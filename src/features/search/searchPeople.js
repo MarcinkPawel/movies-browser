@@ -4,7 +4,7 @@ import { selectSearchPeople } from "../search/searchSlice";
 import { useQueryParameters } from "./queryParameters";
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchPersonById } from "../people/PersonDetails/personSlice";
+import { fetchPersonById } from "../people/PeopleSaga/personSlice";
 import {
   Header,
   PeopleContainer,

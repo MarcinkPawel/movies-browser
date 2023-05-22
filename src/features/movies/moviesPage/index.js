@@ -5,7 +5,7 @@ import {
   fetchMovieById,
   selectMovieInfo,
   selectMovieStatus,
-} from "../MovieTile/movieSlice";
+} from "../MoviesSaga/movieSlice";
 import { selectSearchMoviesStatus } from "../../search/searchSlice";
 import { useEffect } from "react";
 import { AboutMovie } from "./AboutMovie";

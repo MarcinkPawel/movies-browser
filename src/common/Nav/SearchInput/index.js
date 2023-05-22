@@ -10,8 +10,8 @@ import {
 } from "../../../features/search/searchSlice";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { fetchMovieById } from "../../../features/movies/MovieTile/movieSlice";
-import { fetchPersonById } from "../../../features/people/PersonDetails/personSlice";
+import { fetchMovieById } from "../../../features/movies/MoviesSaga/movieSlice";
+import { fetchPersonById } from "../../../features/people/PeopleSaga/personSlice";
 import search from "../../../images/search.svg";
 
 export const Search = () => {

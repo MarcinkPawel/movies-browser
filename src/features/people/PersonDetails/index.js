@@ -6,7 +6,7 @@ import {
   fetchPersonById,
   selectPersonInfo,
   selectPersonStatus,
-} from "./personSlice";
+} from "../PeopleSaga/personSlice";
 import { useQueryParameters } from "../../search/queryParameters";
 import { selectSearchPeopleStatus } from "../../search/searchSlice";
 import { Error } from "../../../common/Error";
