@@ -63,7 +63,7 @@ export const Wrapper = styled.nav`
 `;
 
 export const ContentWidth = styled.div`
-  max-width: 1400px;
+  max-width: 1368px;
   margin: auto;
   display: grid;
   gap: 16px;
