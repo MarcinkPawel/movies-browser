@@ -1,4 +1,4 @@
-import { key, popularPeopleAPI,  } from "../getData";
+import { key, popularPeopleAPI,  } from "../../getData";
 
 export const getPopularPeople = async (page) => {
   try {

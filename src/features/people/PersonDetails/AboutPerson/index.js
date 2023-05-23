@@ -9,7 +9,7 @@ import {
   Info,
   Description,
   Wrapper,
-  DetailsLine
+  DetailsLine,
 } from "./styled";
 import { imagesAPIw400 } from "../../../getData";
 import noPersonImage from "../../../../images/noPersonImage.svg";
@@ -29,7 +29,9 @@ export const AboutPerson = ({
         <Details>
           <DetailsLine constant>
             <Label>Date of birth:</Label>
-            <Label constant disappear>Birth:</Label>
+            <Label constant disappear>
+              Birth:
+            </Label>
             <Info>{new Date(birthday).toLocaleDateString()}</Info>
           </DetailsLine>
           <DetailsLine constant>

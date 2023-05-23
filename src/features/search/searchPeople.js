@@ -4,21 +4,20 @@ import { selectSearchPeople } from "../search/searchSlice";
 import { useQueryParameters } from "./queryParameters";
 import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchPersonById } from "../people/PersonDetails/personSlice";
+import { fetchPersonById } from "../people/PeopleSaga/personSlice";
 import {
   Header,
   PeopleContainer,
   PersonLink,
   Wrapper,
-} from "../people/peoplePage/styled";
-import { Person } from "../people/personPage";
+} from "../people/PeopleList/styled";
+import { Person } from "../people/PersonTile";
 import { NoResults } from "../../common/NoResults";
 
 export const SearchPeople = () => {
   const { page, results, total_pages, total_results } =
     useSelector(selectSearchPeople);
   const searchParams = useQueryParameters("search");
-  const history = useHistory();
   const id = useQueryParameters("id");
   const dispatch = useDispatch();
 

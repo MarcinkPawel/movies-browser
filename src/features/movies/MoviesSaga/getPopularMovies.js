@@ -1,4 +1,4 @@
-import { key, popularMoviesAPI } from "../getData";
+import { key, popularMoviesAPI } from "../../getData";
 
 export const getPopularMovies = async (page) => {
   try {

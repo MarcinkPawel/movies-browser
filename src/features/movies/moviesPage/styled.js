@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax());
-    gap: 24px;
-    justify-items: center;
-    align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax());
+  gap: 24px;
+  justify-items: center;
+  align-items: center;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: repeat(3, 1fr);
@@ -36,4 +36,3 @@ export const List = styled.div`
     margin-right: 16px;
   }
 `;
-

@@ -6,20 +6,20 @@ export const Wrapper = styled.div`
 `;
 
 export const Tile = styled.article`
-    display: grid;
-    margin: 14px;
-    grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
-    justify-content: center;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    background: ${({ theme }) => theme.color.white};
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 40px;
-    padding-right: 40px;
-    box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
-    max-width: 1368px;
-    margin-top: 24px;
+  display: grid;
+  margin: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(324px, 1fr));
+  justify-content: center;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  background: ${({ theme }) => theme.color.white};
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+  max-width: 1368px;
+  margin-top: 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin: 16px;
@@ -61,8 +61,8 @@ export const Image = styled.img`
 `;
 
 export const Content = styled.div`
-grid-area: 1 / 2 / 2 / 4;
-width: fit-content;
+  grid-area: 1 / 2 / 2 / 4;
+  width: fit-content;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-area: 1 / 2 / 2 / 3;
@@ -109,8 +109,8 @@ export const Details = styled.div`
 `;
 
 export const DetailsLine = styled.div`
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 `;
 
 export const Label = styled.p`
@@ -187,16 +187,15 @@ export const Votes = styled.span`
 `;
 
 export const TotalRate = styled.p`
-    font-size: 14px;
-    line-height: 1.2;
-    color: ${({ theme }) => theme.color.black};
+  font-size: 14px;
+  line-height: 1.2;
+  color: ${({ theme }) => theme.color.black};
 
-
-@media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
     display: none;
   }
 
-@media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     display: none;
-}  
+  }
 `;

@@ -4,7 +4,7 @@ import { theme } from "./theme";
 import { Nav } from "./common/Nav";
 import { Movie } from "./features/movies/moviesPage"
 import { Movies } from "./features/movies/MoviesList";
-import { People } from "./features/people/peoplePage";
+import { People } from "./features/people/PeopleList";
 import { PersonDetails } from "./features/people/PersonDetails";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import React from 'react';
