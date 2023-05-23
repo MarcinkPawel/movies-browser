@@ -34,7 +34,7 @@ export const Movie = () => {
 
   if (status === "error" && query === null) return <Error />;
   if (status === "loading" && query === null)
-    return <Loader searchFor={"movie"} />;
+    return <Loader searchWord={"movie"} />;
   if (searchStatus === "success" && query !== null) return <SearchMovie />;
   if (status === "success" && query === null)
     return (

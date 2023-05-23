@@ -32,7 +32,7 @@ export const PersonDetails = () => {
 
   if (status === "error" && query === null) return <Error />;
   if (status === "loading" && query === null)
-    return <Loader searchFor={"person"} />;
+    return <Loader searchWord={"person"} />;
   if (searchStatus === "success" && query !== null) return <SearchPeople />;
   if (status === "success" && query === null)
     return (
