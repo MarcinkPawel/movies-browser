@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   max-width: 100%;
   margin: 0 auto;
-  position: relative;
+  //position: relative;
 `;
 
 export const PosterSpace = styled.div`
@@ -63,7 +63,13 @@ export const Section = styled.section`
   position: absolute;
   left: 14%;
   bottom: 7%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    flex-direction: row;
+  }
 `;
+
+
 
 export const Title = styled.span`
   font-size: 64px;
@@ -99,6 +105,8 @@ export const RateStyledB = styled.p`
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 10px;
+    margin-bottom: 0;
+    font-size: 12px;
   }
 `;
 
@@ -108,16 +116,45 @@ export const Votes = styled.p`
   line-height: 19px;
   margin-top: 17px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: 5px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     font-size: 10px;
     line-height: 12px;
+    margin-left: 8px;
   }
 `;
 
 export const Star = styled.img`
   width: 40px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoint.tablet}px) {
+    width: 25px;
+  }
+
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     width: 16px;
   }
 `;
+
+export const RateContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 56px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-bottom: 4px;
+    flex-direction: row;
+    align-items: center;
+  }
+  `;
