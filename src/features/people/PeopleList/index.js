@@ -39,10 +39,10 @@ export const People = () => {
   }
   if (statusSearchPeople === "error") return <Error />;
   if (status === "loading" && searchQuery === null) {
-    return <Loader searchFor={"popular people"} />;
+    return <Loader />;
   }
   if (searchQuery !== null && statusSearchPeople === "loading")
-    return <Loader searchFor={searchQuery} />;
+    return <Loader />;
   if (searchQuery !== null && statusSearchPeople === "success")
     return <SearchPeople />;
   if (status === "success" && searchQuery === null) {

@@ -64,6 +64,7 @@ export const FullName = styled.h2`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    padding: 0 0 8px 0;
     font-size: 14px;
     line-height: 18px;
   }

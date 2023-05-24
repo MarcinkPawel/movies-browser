@@ -43,6 +43,7 @@ export const Poster = styled.img`
 export const Title = styled.h2`
   line-height: 1.3;
   font-weight: ${({ theme }) => theme.fontWeight.medium};
+  color: ${({ theme }) => theme.color.black};
   font-size: 22px;
   margin-top: 16px;
 
