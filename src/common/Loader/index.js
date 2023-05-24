@@ -1,12 +1,8 @@
-import { Icon, Info, Wrapper } from "./styled";
-import iconspinner from "../../images/IconSpinner.svg";
 import React from "react";
-import { useQueryParameters } from "../../features/search/queryParameters";
-import { searchQueryParamName } from "../../features/search/queryParamNames";
+import { Icon, Wrapper } from "./styled";
+import iconspinner from "../../images/IconSpinner.svg";
 
 export const Loader = () => {
-  const query = useQueryParameters(searchQueryParamName);
-
   return (
     <Wrapper>
       <Icon src={iconspinner} />

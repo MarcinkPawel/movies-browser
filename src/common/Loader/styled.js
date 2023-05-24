@@ -28,10 +28,3 @@ export const Icon = styled.img`
   }
 `;
 
-export const Info = styled.h1`
-  font-weight: 600;
-  font-size: 36px;
-  line-height: 1.2;
-  margin-left: 276px;
-  margin-top: 56px;
-`;
